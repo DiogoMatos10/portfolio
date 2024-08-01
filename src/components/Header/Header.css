@@ -1,5 +1,12 @@
+:root{
+    --primary-color:#0F172A;
+    --secondary-color:#1A2B46;
+    --text-color:#AAD9D9;
+    --hover-color:#aad9d9ac;
+}
+
 body {
-    background-color: #0F172A;
+    background-color: var(--primary-color);
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -13,13 +20,13 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
     position: relative;
-    background-color: #0F172A;
+    background-color: var(--primary-color);
     transition: background-color;
     border-bottom: 2px solid transparent;
 }
 
 .header.menu-open {
-    background-color: #1A2B46;
+    background-color: var(--secondary-color);
 }
 
 .avatar-container {
@@ -40,7 +47,7 @@ body {
 
 .header-title-link {
     text-decoration: none;
-    color: #AAD9D9;
+    color: var(--text-color);
 }
 
 .header-title {
@@ -59,7 +66,7 @@ body {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #1A2B46;
+    background-color: var(--secondary-color);
     overflow: hidden;
     max-height: 0;
     transition: max-height;
@@ -96,22 +103,25 @@ body {
     padding: 0;
     margin: 0;
     display: flex;
+    align-items: center;
 }
 
 .nav-options li {
     margin-left: 20px;
     text-align: center;
+    align-items: center;
+    display: flex;
 }
 
 .nav-options li a {
     text-decoration: none;
     font-size: 16px;
-    color: #AAD9D9;
+    color: var(--text-color);
     cursor: pointer;
 }
 
 .nav-options li a:hover {
-    color: #aad9d9ac;
+    color: var(--hover-color);
 }
 
 .hamburger {
@@ -123,21 +133,21 @@ body {
 }
 
 .hamburger-icon {
-    fill: #AAD9D9; 
+    fill: var(--text-color); 
     transition: fill 0.3s ease;
     transition: opacity 0.3s ease;
 }
 
 
 .hamburger:hover .hamburger-icon {
-    fill: #aad9d9ac; 
+    fill: var(--hover-color); 
 }
 
 .hamburger__bar {
     transition-property: transform;
     transition-duration: 0.3s;
     transform-origin: center;
-    stroke: #AAD9D9;
+    stroke: var(--text-color);
     stroke-width: 10%;
 }
 
@@ -157,9 +167,36 @@ body {
 .hamburger__bar--bot.active {
     transform: rotate(-45deg);
 }
+
+.globe-button, .theme-toggle{
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.globe-button svg,.theme-toggle svg {
+    stroke: var(--text-color);
+    transition: stroke 0.3s ease;
+}
+
+.globe-button:hover svg, .theme-toggle:hover svg {
+    stroke: var(--hover-color);
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+}
+
+.nav-options-container.active .globe-button, 
+.nav-options-container.active .theme-toggle{
+    margin: 0 10px; 
+}
   
-
-
 @media (max-width: 650px) {
     .hamburger {
         display: block;

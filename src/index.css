@@ -1,6 +1,20 @@
-body{
-    background-color: #0F172A;
-    color: #AAD9D9;
+:root {
+    --primary-color: #0F172A;   
+    --secondary-color: #1A2B46; 
+    --text-color: #AAD9D9;      
+    --hover-color: #aad9d9ac;   
+}
+
+.light-mode {
+    --primary-color: #F0F0F0;   
+    --secondary-color: #E0E0E0; 
+    --text-color: #0F172A;      
+    --hover-color: #0f172974;   
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--text-color);
     font-family: "Rubik", sans-serif;
     font-style: normal;
     font-optical-sizing: auto;
