@@ -1,10 +1,3 @@
-:root{
-    --primary-color:#0F172A;
-    --secondary-color:#1A2B46;
-    --text-color:#AAD9D9;
-    --hover-color:#aad9d9ac;
-}
-
 body {
     background-color: var(--primary-color);
     margin: 0;
