@@ -1,15 +1,18 @@
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import React,{useContext} from "react";
-import { ThemeMode } from "../App";
+import React from "react";
+import HomeContent from "../components/Content/HomeContent";
 
-function Home(){
-    const themeMode=useContext(ThemeMode)
-    
-    return(<div>
-        <Header themeMode={themeMode}/>
-        <Footer/>
-    </div>);
+function Home() {
+  return (
+    <div id="root">
+      <Header />
+      <div className="home-container">
+        <HomeContent/>
+      </div>
+      <Footer />
+    </div>
+  );
 }
 
-export default Home
+export default Home;

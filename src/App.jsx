@@ -9,7 +9,7 @@ import NoPage from "./pages/NoPage";
 export const ThemeMode = createContext();
 
 function App() {
-  const [themeMode, setThemeMode] = useState(false); //false is dark and true is ligh
+  const [themeMode, setThemeMode] = useState(false); // false is dark and true is light
 
   useEffect(() => {
     if (themeMode) {
@@ -25,14 +25,16 @@ function App() {
     <ThemeMode.Provider value={{ themeMode, setThemeMode }}>
       <div className={themeMode ? 'light-mode' : 'dark-mode'}>
         <BrowserRouter>
-          <Routes>
-            <Route index element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/experience" element={<Experience />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NoPage />} />
-          </Routes>
+          <div id="root">
+            <Routes>
+              <Route index element={<Home />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/experience" element={<Experience />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<NoPage />} />
+            </Routes>
+          </div>
         </BrowserRouter>
       </div>
     </ThemeMode.Provider>

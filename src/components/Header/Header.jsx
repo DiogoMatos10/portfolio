@@ -4,7 +4,7 @@ import "./Header.css";
 import { ThemeMode } from "../../App";
 
 
-function Header(props) {
+function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [closing, setClosing] = useState(false);
     const { themeMode, setThemeMode } = useContext(ThemeMode);

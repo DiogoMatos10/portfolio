@@ -2,22 +2,36 @@
     --primary-color: #0F172A;   
     --secondary-color: #1A2B46; 
     --text-color: #AAD9D9;      
-    --hover-color: #aad9d9ac;   
+    --hover-color: #aad9d9ac;
 }
 
 .light-mode {
     --primary-color: #F0F0F0;   
     --secondary-color: #E0E0E0; 
     --text-color: #0F172A;      
-    --hover-color: #0f172974;   
+    --hover-color: #0f172974; 
+    transition: 0.4s ease-in;  
 }
 
-body {
+.dark-mode{
+    transition: 0.4s ease-out;  
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
     background-color: var(--primary-color);
     color: var(--text-color);
     font-family: "Rubik", sans-serif;
     font-style: normal;
     font-optical-sizing: auto;
     font-weight: 400;
-    margin: 0;
 }
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
