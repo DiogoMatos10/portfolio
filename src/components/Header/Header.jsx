@@ -70,6 +70,7 @@ function Header(props) {
                     <li><Link to="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
                     <li><Link to="/experience" onClick={() => setMenuOpen(false)}>Experience</Link></li>
                     <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
+                    
                     <div className="button-container">
                         <li>
                             <button className="globe-button">

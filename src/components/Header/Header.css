@@ -171,6 +171,7 @@ body {
     justify-content: center;
 }
 
+
 .globe-button svg,.theme-toggle svg {
     stroke: var(--text-color);
     transition: stroke 0.3s ease;
@@ -184,6 +185,7 @@ body {
     display: flex;
     justify-content: center;
 }
+
 
 .nav-options-container.active .globe-button, 
 .nav-options-container.active .theme-toggle{

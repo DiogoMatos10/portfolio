@@ -1,0 +1,75 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container-404 {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("/public/background-porto.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.info-error {
+    background: rgba(82, 82, 82, 0.14);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(1.6px);
+    border: 1px solid rgba(194, 194, 194, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    color: #7dc2c2;
+}
+
+.info-error h1, .info-error p {
+    margin: 10px 0;
+}
+
+.back-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    color: var(--hover-color);
+}
+
+@media (max-width: 768px) {
+    .info-error {
+        width: 80%;
+        padding: 15px;
+    }
+
+    .info-error h1 {
+        font-size: 24px;
+    }
+
+    .info-error p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-error {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .info-error h1 {
+        font-size: 20px;
+    }
+
+    .info-error p {
+        font-size: 14px;
+    }
+}

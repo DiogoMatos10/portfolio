@@ -1,9 +1,9 @@
-
+import NoPageComp from "../components/NoPage/NoPageComp";
 
 function NoPage(){
-    return(<div>
-        <h1>NoPage</h1>
-    </div>);
+    
+
+    return(<NoPageComp/>);
 }
 
 export default NoPage

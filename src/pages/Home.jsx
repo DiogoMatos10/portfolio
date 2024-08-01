@@ -1,4 +1,5 @@
 import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 import React,{useContext} from "react";
 import { ThemeMode } from "../App";
 
@@ -7,6 +8,7 @@ function Home(){
     
     return(<div>
         <Header themeMode={themeMode}/>
+        <Footer/>
     </div>);
 }
 
