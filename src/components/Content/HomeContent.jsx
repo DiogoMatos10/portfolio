@@ -8,7 +8,7 @@ function HomeContent(){
     const { themeMode, setThemeMode } = useContext(ThemeMode);
 
     return (
-        <div className={`home-container ${themeMode? 'light-mode' : 'dark-mode'}`}>
+        <div className={`home-container`}>
             <p className="hello">Hello, I'm Diogo</p>
             <p className="paragraph">I graduated with a degree in Computer Science Engeneering. 
             Through my coursework and internships, I have developed significant programming skills.

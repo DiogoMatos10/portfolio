@@ -49,6 +49,8 @@ body {
 .nav-options-container {
     display: flex;
     align-items: center;
+    transition: ease 2s;
+
 }
 
 .nav-options-container.active {

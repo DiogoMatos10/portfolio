@@ -52,7 +52,7 @@ function Header() {
 
 
     return (
-        <div className={`header ${menuOpen ? 'menu-open' : ''} ${themeMode ? 'light-mode' : 'dark-mode'}`}>
+        <div className={`header ${menuOpen ? 'menu-open' : ''}`}>
             <div className="logo-container">
                 <Link to="/home"><img className="logo-picture" src="public/images/dm@2.png" alt="Diogo's Logo" /></Link>
             </div>
