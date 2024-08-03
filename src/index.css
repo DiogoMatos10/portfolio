@@ -43,6 +43,7 @@ body {
     padding: 0;
     color: var(--text-color);
     font-family: 'Roboto Condensed', sans-serif;
+    
 }
 
 @media (min-width:1300px) {
