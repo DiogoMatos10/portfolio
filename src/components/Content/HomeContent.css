@@ -9,22 +9,25 @@
    max-width: 100%;
    box-sizing: border-box;
    color: var(--text-color);
+   margin-top: -20px;
 }
 
 
 .home-container p{
     width: 50%;
     font-family: "Roboto Regular","sans-serif";
-    font-size: 16px;
     transition:  1s ease;
 }
 
 .hello{
     margin-bottom: 30px;
+    font-size: 30px;
 }
 
 .paragraph{
     margin-bottom: 70px;
+    font-size: 18px;
+    line-height: 2;
 }
 
 .github-icon svg,.linkdin-icon svg {

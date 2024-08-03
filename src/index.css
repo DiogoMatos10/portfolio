@@ -14,17 +14,17 @@
 
 
 :root {
-    --primary-color: #0F172A;   
-    --secondary-color: #1A2B46; 
+    --primary-color: #0B111E;   
+    --secondary-color: #11192D; 
     --text-color: #AAD9D9;      
-    --hover-color: #aad9d9ac;
+    --hover-color: #72C0C0;
 }
 
 .light-mode {
-    --primary-color: #F0F0F0;   
-    --secondary-color: #E0E0E0; 
-    --text-color: #0F172A;      
-    --hover-color: #0f172974; 
+    --primary-color: #F5F5F5;   
+    --secondary-color: #EBEBEB; 
+    --text-color: #5C5C5C;      
+    --hover-color: #7A7A7A; 
 }
 
 /* .light-mode:not(.nav-options-container.active, .header.menu-open.light-mode,header.light-mode ){
