@@ -1,8 +1,10 @@
-.container-404 {
+#root.no-page {
     display:flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100%;
+    margin: 0;
     background-image: url("/public/images/background-porto.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -13,13 +15,15 @@
     text-align: center;
 }
 
+
+
 .info-error {
     background: rgba(82, 82, 82, 0.14);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 100% 100% rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(1.6px);
     border: 1px solid rgba(194, 194, 194, 0.1);
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
     color: #7dc2c2;
 }
@@ -28,10 +32,8 @@
     margin: 10px 0;
 }
 
-.back-link {
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: bold;
+.logo-picture {
+    height: 50px;
 }
 
 .back-link:hover {

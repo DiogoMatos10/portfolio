@@ -54,8 +54,7 @@ function Header() {
     return (
         <div className={`header ${menuOpen ? 'menu-open' : ''} ${themeMode ? 'light-mode' : 'dark-mode'}`}>
             <div className="logo-container">
-                <Link to="/home"><img className="logo-picture" src="public/images/dm@2.png" alt="Diogo's Picture" /></Link>
-            
+                <Link to="/home"><img className="logo-picture" src="public/images/dm@2.png" alt="Diogo's Logo" /></Link>
             </div>
             <div className={`hamburger ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" className="hamburger-icon">
