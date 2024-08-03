@@ -1,30 +1,29 @@
+
 body {
     background-color: var(--primary-color);
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
     min-width: 250px;
 }
 
 
-
 .header {
-    padding: 10px 30px;
+    padding: 30px 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     position: relative;
     background-color: var(--primary-color);
-    transition: background-color;
     border-bottom: 2px solid transparent;
+    font-family: 'Roboto Regular', sans-serif;
 }
 
 .header.menu-open {
     background-color: var(--secondary-color);
 }
 
-.avatar-container {
+.logo-container {
     display: flex;
     text-align: center;
     text-decoration: none;
@@ -33,11 +32,8 @@ body {
     z-index: 2;
 }
 
-.avatar-container img {
-    height: 50px;
-    width: 50px;
-    object-fit: cover;
-    border-radius: 50%;
+.logo-container img {
+   height: 50px;
 }
 
 .header-title-link {
@@ -186,6 +182,7 @@ body {
 .button-container{
     display: flex;
     justify-content: center;
+    margin-left: 20px;
 }
 
 
@@ -214,5 +211,9 @@ body {
 
     .nav-options li {
         margin: 10px 0;
+    }
+
+    .button-container{
+        margin-left: 0px;
     }
 }
