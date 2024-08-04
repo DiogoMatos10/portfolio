@@ -49,8 +49,6 @@ body {
 .nav-options-container {
     display: flex;
     align-items: center;
-    transition: ease 2s;
-
 }
 
 .nav-options-container.active {
@@ -132,8 +130,8 @@ body {
 }
 
 
-.hamburger:hover .hamburger-icon {
-    fill: var(--hover-color); 
+svg.hamburger-icon:hover {
+    stroke: var(--hover-color); 
 }
 
 .hamburger__bar {
@@ -169,6 +167,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    fill: none;
 }
 
 
