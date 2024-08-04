@@ -1,17 +1,16 @@
 import React, { useState,useEffect,useContext } from "react";
 import "./HomeContent.css"
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 
 function HomeContent(){
+    const [ t ,i18n ] = useTranslation('global');
 
     return (
         <div className="home-container">
-            <p className="hello">Hello, I'm Diogo</p>
-            <p className="paragraph">I graduated with a degree in Computer Science Engeneering. 
-            Through my coursework and internships, I have developed significant programming skills.
-            Currently, I am focusing and refining my web development abilities, particularly with the React framework.
-            </p>
+            <p className="hello">{t("home.hello")}</p>
+            <p className="paragraph">{t("home.paragraph")}</p>
             <div className="links-icon">
                 <Link className="github-icon" to={'https://github.com/DiogoMatos10'}>
                     <svg width="35" height="35" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">

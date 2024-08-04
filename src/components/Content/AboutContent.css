@@ -7,11 +7,16 @@
     color: var(--text-color);
     margin-top: 20px;
     box-sizing: border-box;
+    margin-bottom: 100px;
+}
+
+.titles {
+    font-size: 30px;
+    margin-bottom: 30px;
 }
 
 .about-info,
 .projects {
-    border: 1px solid var(--text-color);
     box-sizing: border-box;
     margin: 0 40px;
 }
@@ -21,6 +26,20 @@
     height: 500px;
     width: calc(50% - 80px);
 }
+
+.projects{
+    border: 1px solid var(--text-color);
+}
+
+.about-info .paragraph{
+    margin-top: 50px;
+}
+
+
+
+
+
+/* Skills */
 
 .skills {
     width: calc(100% - 80px);
@@ -33,7 +52,9 @@
     gap: 20px; 
     backdrop-filter: blur(20px);
     border-radius: 5px;
+    color: var(--text-color);
 }
+
 
 .skills-content {
     display: flex;
@@ -67,13 +88,12 @@
 
 .skill-container p {
     margin: 5px;
-    font-family: "Poppins", sans-serif;
     font-size: 16px;
 }
 
 .bar {
     width: 100%;
-    background: #475472;
+    background: var(--bar-color);
     height: 5px; 
     border-radius: 100vw;
     overflow: hidden;
@@ -90,45 +110,11 @@
     width: var(--bar-width, 0%);
 }
 
-
-
-.titles {
-    font-size: 30px;
-    margin-bottom: 30px;
-}
-
-@media (max-width: 768px) {
-
-    .about-info,
-    .projects {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    .about-container {
-        padding: 50px;
-    }
-
-    .skills {
-        width: 100%;
-        height: auto;
-    }
-
-    .skills-content{
-        flex-direction: column;
-        gap: 0;
-    }
-    .skill-column{
-        margin-bottom: -10px;
-    }
-}
-
-
 .percentage {
     content: "";
     position: absolute;
-    color: #fff;
-    background: hsla(223, 21%, 33%, 0.219);
+    color: var(--percentage-color);
+    background:  var( --percentage-background);
     top: 25%; 
     width: 30px; 
     height: 20px; 
@@ -141,7 +127,6 @@
     transform: translateY(-50%);
     white-space: nowrap;
 }
-
 
 .animate {
     animation: animateWidth 1.5s forwards;
@@ -166,5 +151,40 @@
     }
 
     to {
+    }
+}
+
+
+
+/* Mobile and Tablet version */
+
+@media (max-width: 768px) {
+
+    .about-info,
+    .projects {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .projects{
+        margin-top: -30px;
+    }
+
+    .about-container {
+        padding: 50px;
+        margin-bottom: 50px;
+    }
+
+    .skills {
+        width: 100%;
+        height: auto;
+    }
+
+    .skills-content{
+        flex-direction: column;
+        gap: 0;
+    }
+    .skill-column{
+        margin-bottom: -10px;
     }
 }

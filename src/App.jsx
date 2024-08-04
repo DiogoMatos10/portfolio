@@ -15,7 +15,6 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Update the body class based on the theme mode
     if (themeMode) {
       document.body.classList.add('light-mode');
       document.body.classList.remove('dark-mode');
@@ -34,7 +33,6 @@ function App() {
     loadData();
   }, []);
 
-  // Wrapper component to manage the #root class based on route
   function RouteWrapper({ element }) {
     const location = useLocation();
 

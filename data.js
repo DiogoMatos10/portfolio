@@ -1,3 +1,11 @@
+export const dataLanguage=[
+    {
+        language: 'en',
+        
+    }
+]
+
+
 export const dataProjects=[
     {
         

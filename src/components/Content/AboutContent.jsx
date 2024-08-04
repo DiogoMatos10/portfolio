@@ -70,7 +70,7 @@ function AboutContent() {
         <p className="titles">Projects</p>
       </div>
       <div className="skills" ref={skillContainerRef}>
-        <p className="skills-header">Skills</p>
+        <p className="skills-header">Digital Skills</p>
         <div className="skills-content">
           <div className="skill-column">
             {firstHalfSkills.map(skill => (

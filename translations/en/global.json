@@ -1,0 +1,11 @@
+{
+    "header":{
+        "about":"About",
+        "experience":"Experience",
+        "contact":"Contact"
+    },
+    "home":{
+        "hello":"Hello, I'm Diogo",
+        "paragraph":"I graduated with a degree in Computer Science Engeneering. Through my coursework and internships, I have developed significant programming skills. Currently, I am focusing and refining my web development abilities, particularly with the React framework."
+    }
+}
