@@ -18,6 +18,13 @@
     --secondary-color: #11192D; 
     --text-color: #AAD9D9;      
     --hover-color: #72C0C0;
+
+    --glass-background-color:rgba(255, 255, 255, 0.01);
+    --glass-box-shadow:0 4px 30px rgba(0, 0, 0, 0.1);
+    --glass-backdrop-filter: blur(2.3px);
+    --glass-webkit-backdrop-filter:blur(2.3px);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.11);
+
 }
 
 .light-mode {

@@ -26,10 +26,6 @@ export const dataSkills=[
         percentage:"80%"
     },
     {
-        name:"Kotlin",
-        percentage:"75%"
-    },
-    {
         name:"OutSystems",
         percentage:"75%"
     },
@@ -40,13 +36,5 @@ export const dataSkills=[
     {
         name:"C",
         percentage:"65%"
-    },
-    {
-        name:"Assembly",
-        percentage:"65%"
-    },
-    {
-        name:"Prolog/OCaml",
-        percentage:"55%"
     },
 ]

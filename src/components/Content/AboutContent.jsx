@@ -19,7 +19,7 @@ function AboutContent() {
             span.style.setProperty('--bar-width', width); 
             span.classList.add('animate');
             percentage.style.setProperty('--percentage-left', width); 
-            percentage.classList.add('animate');
+            percentage.classList.add('animatePer');
           });
         } else {
           spans.forEach((span, index) => {
@@ -36,10 +36,11 @@ function AboutContent() {
     }
 
     const updatePercentagePositions = () => {
-      const barWidth = document.querySelector('.bar').clientWidth;
+      const bars = document.querySelectorAll('.bar');
+      const barWidth = bars[0]?.clientWidth || 0; 
       percentages.forEach(percentage => {
         const widthPercentage = parseFloat(percentage.textContent) / 100;
-        percentage.style.left = `${barWidth * widthPercentage-12}px`;
+        percentage.style.left = `${barWidth * widthPercentage - 15}px`; 
       });
     };
 
@@ -51,6 +52,9 @@ function AboutContent() {
       window.removeEventListener('resize', updatePercentagePositions); 
     };
   }, [skills]);
+
+  const firstHalfSkills = skills.slice(0, Math.ceil(skills.length / 2));
+  const secondHalfSkills = skills.slice(Math.ceil(skills.length / 2));
 
   return (
     <div className="about-container">
@@ -64,22 +68,36 @@ function AboutContent() {
       </div>
       <div className="projects">
         <p className="titles">Projects</p>
-        {/* Future projects content can go here */}
       </div>
       <div className="skills" ref={skillContainerRef}>
-        <p className="titles">Skills</p>
-        <div className="skills-header">
-          {skills.map(skill => (
-            <div key={skill.name} className="skill-container">
-              <p>{skill.name}</p>
-              <div className={`percentage ${skill.name.toLowerCase()}-percentage`}>
-                {skill.percentage}
+        <p className="skills-header">Skills</p>
+        <div className="skills-content">
+          <div className="skill-column">
+            {firstHalfSkills.map(skill => (
+              <div key={skill.name} className="skill-container">
+                <p>{skill.name}</p>
+                <div className={`percentage ${skill.name.toLowerCase()}-percentage`}>
+                  {skill.percentage}
+                </div>
+                <div className="bar">
+                  <span className={`${skill.name.toLowerCase()}`}></span>
+                </div>
               </div>
-              <div className="bar">
-                <span className={`${skill.name.toLowerCase()}`}></span>
+            ))}
+          </div>
+          <div className="skill-column">
+            {secondHalfSkills.map(skill => (
+              <div key={skill.name} className="skill-container">
+                <p>{skill.name}</p>
+                <div className={`percentage ${skill.name.toLowerCase()}-percentage`}>
+                  {skill.percentage}
+                </div>
+                <div className="bar">
+                  <span className={`${skill.name.toLowerCase()}`}></span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
