@@ -96,6 +96,7 @@ function AboutContent() {
               </div>
             )
           ))}
+          <Link className="see-more" to={"https://github.com/DiogoMatos10?tab=repositories"}><p>Click here to see more ↗</p></Link>
         </div>
       </div>
       <div className="skills" ref={skillContainerRef}>
