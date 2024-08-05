@@ -4,6 +4,9 @@
         "experience":"Experiência",
         "contact":"Contacto"
     },
+    "footer":{
+        "info":"Desenhado no Figma e desenvolvido em Visual Studio Code. Construído com React e CSS."
+    },
     "home":{
         "hello":"Olá, eu sou o Diogo",
         "paragraph":"Licenciei-me em Engenharia Informática. Através do meu curso e dos estágios que realizei, desenvolvi competências de programação significativas. Atualmente estou me a focar e a melhorar as minhas capacidades de desenvolvimento web, principalmente com a framework React."

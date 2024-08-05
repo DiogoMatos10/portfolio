@@ -12,7 +12,6 @@
    margin-top: -20px;
 }
 
-
 .home-container p{
     width: 50%;
     font-family: "Roboto Regular","sans-serif";
@@ -36,7 +35,6 @@
 .github-icon:hover svg, .linkdin-icon:hover svg {
     stroke: var(--hover-color);
 }
-
 
 @media (max-width: 650px) {
     .home-container {

@@ -1,9 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './AboutContent.css';
-import { dataSkills } from '../../../data';
+import { dataSkills, dataProjects } from '../../../data';
+import { Link } from 'react-router-dom';
 
 function AboutContent() {
   const [skills, setSkills] = useState(dataSkills); 
+  const [projects, setProjects] = useState(dataProjects);
   const skillContainerRef = useRef(null);
 
   useEffect(() => {
@@ -68,9 +70,36 @@ function AboutContent() {
       </div>
       <div className="projects">
         <p className="titles">Projects</p>
+        <div className='project-content'>
+          {projects.map(project => (
+            project.link ? (
+              <Link to={project.link} key={project.name}>
+                <div className='project-container'>
+                  <p className='project-title'>{project.name}</p>
+                  <p className='project-description'>{project.description}</p>
+                  <div className='project-tecnologies'>
+                    {project.technologies.map((tecnology, index) => (
+                      <p key={`${project.name}-tech-${index}`} className="tecnology-container">{tecnology}</p>
+                    ))}
+                  </div>
+                </div>
+              </Link>
+            ) : (
+              <div className='project-container' key={project.name}>
+                <p className='project-title'>{project.name}</p>
+                <p className='project-description'>{project.description}</p>
+                <div className='project-tecnologies'>
+                  {project.technologies.map((tecnology, index) => (
+                    <p key={`${project.name}-tech-${index}`} className="tecnology-container">{tecnology}</p>
+                  ))}
+                </div>
+              </div>
+            )
+          ))}
+        </div>
       </div>
       <div className="skills" ref={skillContainerRef}>
-        <p className="skills-header">Digital Skills</p>
+        <p className="titles">Digital Skills</p>
         <div className="skills-content">
           <div className="skill-column">
             {firstHalfSkills.map(skill => (

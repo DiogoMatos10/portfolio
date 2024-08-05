@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     width: 100%;
     max-width: 100%;
-    padding: 80px 40px;
+    padding: 80px 25px;
     color: var(--text-color);
     margin-top: 20px;
     box-sizing: border-box;
@@ -27,56 +27,111 @@
     width: calc(50% - 80px);
 }
 
-.projects{
-    border: 1px solid var(--text-color);
-}
-
 .about-info .paragraph{
     margin-top: 50px;
 }
 
+/* Projects */
 
+.project-content{
+    text-decoration: none;
+}
 
+.project-content p{
+    text-decoration: none;
+    color: var(--text-color);
+    
+}
 
+a:link, a:visited{
+    text-decoration: none;
+}
+
+.project-container{
+    margin-bottom: 15px;
+    background: var(--glass-background-color);
+    box-shadow: var(--glass-box-shadow);
+    backdrop-filter: var(--glass-backdrop-filter);
+    -webkit-backdrop-filter: var(--glass-webkit-backdrop-filter);
+    border: var(--glass-border);
+    border-radius: 5px;
+    padding: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-container .project-title{
+    font-size: 16px;    
+}
+
+.project-container .project-description{
+    font-size: 13px;
+}
+
+.project-tecnologies{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    gap: 10px;
+    position: relative;
+}
+
+.project-tecnologies::after {
+    content: "";
+    display: block;
+    flex-basis: 100%; 
+    height: 5px; 
+    margin-top: 5px; 
+    background: transparent; 
+}
+
+.tecnology-container{
+    color: var(--percentage-color);
+    font-size: 12px;
+    background:  var( --percentage-background);
+    border-radius: 5px;
+    width: auto;
+    padding: 4px;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+    box-sizing: border-box;
+    margin-bottom: -10px; 
+}
 
 /* Skills */
 
 .skills {
     width: calc(100% - 80px);
-    margin: 20px auto 0;
+    margin: 20vh auto 0;
     height: 400px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
     gap: 20px; 
-    backdrop-filter: blur(20px);
-    border-radius: 5px;
     color: var(--text-color);
 }
-
 
 .skills-content {
     display: flex;
     flex-direction: row;
     justify-content: space-between; 
-    gap: 20px; 
+    gap: 80px; 
     background: var(--glass-background-color);
     box-shadow: var(--glass-box-shadow);
     backdrop-filter: var(--glass-backdrop-filter);
     -webkit-backdrop-filter: var(--glass-webkit-backdrop-filter);
     border: var(--glass-border);
-    padding: 20px;
+    padding: 30px;
     border-radius: 5px;
 }
 
 .skill-column {
     flex: 1; 
-}
-
-.skills-header {
-    font-size: 30px;
-    margin-bottom: 30px;
 }
 
 .skill-container {
@@ -154,20 +209,23 @@
     }
 }
 
-
-
 /* Mobile and Tablet version */
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
 
     .about-info,
-    .projects {
+    .projects,.skills {
         width: 100%;
         margin: 10px 0;
+        height: auto;
+    }
+
+    .about-info{
+        margin-bottom: -50px;
     }
 
     .projects{
-        margin-top: -30px;
+        margin:10px 0px
     }
 
     .about-container {
@@ -186,5 +244,11 @@
     }
     .skill-column{
         margin-bottom: -10px;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+    .skills {
+        margin-top: calc(50px + (50px * (1300px - 100vw) / (1300px - 1000px)));
     }
 }

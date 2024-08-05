@@ -4,6 +4,9 @@
         "experience":"Experience",
         "contact":"Contact"
     },
+    "footer":{
+        "info":"Designed in Figma and coded in Visual Studio Code. Built with React and CSS."
+    },
     "home":{
         "hello":"Hello, I'm Diogo",
         "paragraph":"I graduated with a degree in Computer Science Engeneering. Through my coursework and internships, I have developed significant programming skills. Currently, I am focusing and refining my web development abilities, particularly with the React framework."
