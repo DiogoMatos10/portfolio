@@ -8,12 +8,12 @@
         "info": "Designed in Figma and coded in Visual Studio Code. Built with React and CSS."
     },
     "home": {
-        "hello": "Hello, I'm Diogo",
-        "paragraph": "I graduated with a degree in Computer Science Engeneering. Through my coursework and internships, I have developed significant programming skills. Currently, I am focusing and refining my web development abilities, particularly with the React framework."
+        "hello": "Welcome to my Website",
+        "paragraph": "I'm Diogo Matos, I have a degree in Computer Engineering. Here you can learn more about me, such as my academic and professional trajectory. Explore my projects to see what I've worked on, discover my digital skills and discover my experience. Feel free to get in touch if you have any questions or would like to connect."
     },
     "about":{
         "about":"About",
-        "paragraph":" I'm Diogo Matos. I'm 21 years old and recently graduated with a degree in Computer Sciences Engineering from Évora, Portugal. I am from Portugal and am highly proactive, always eager to learn and work. My main focus is on web and mobile development.",
+        "paragraph":"I'm Diogo Matos. I'm 21-year-old portuguese and recently graduated with a degree in Computer Science Engineering from Évora, Portugal. Through my coursework and internships, I have developed significant programming skills. I am highly proactive and always eager to learn and work. Currently, I am focused on refining my web and mobile development abilities, particularly with the React framework, and I am actively seeking job opportunities in these areas.",
         "projects":"Projects",
         "click":"Click here to see more ↗",
         "skills":"Digital Skills"
