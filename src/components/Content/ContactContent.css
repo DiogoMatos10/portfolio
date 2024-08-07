@@ -1,0 +1,106 @@
+.contact-container {
+    padding: 80px 50px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+
+.contact-container .titles {
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 30px);
+}
+
+.links-icon {
+    margin-bottom: 50px;
+}
+
+.contact-container .links-icon > a {
+    margin-right: 20px;
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    width: 100%;
+}
+
+.form .form-left, .form .form-right {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; 
+    width: calc(50% - 20px); 
+}
+
+.form textarea {
+    resize: none;
+    height: 110px;
+}
+
+.form input, .form textarea {
+    border-radius: 5px;
+    background-color: #D3ECEC;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.form input:not(#fsubmit), .form textarea {
+    padding: 10px;
+}
+
+form {
+    width: 100%;
+}
+
+input#fname, input#femail, input#fsubject, input#fsubmit {
+    height: 40px;
+}
+
+input#fsubmit {
+    background-color: #3A9088;
+    color: #D3ECEC;
+    border: none;
+    cursor: pointer;
+}
+
+input#fsubmit:hover {
+    background-color: #2F7A6E;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+* input {
+    padding: 0;
+}
+
+input#fmessage {
+    height: 90px;
+}
+
+::placeholder {
+    color: #616161;
+    font-family: 'Roboto Condensed', "sans-serif";
+}
+
+@media (max-width: 650px) {
+    .contact-container .titles {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .form {
+        flex-direction: column;
+        gap: 30px;
+
+    }
+    
+    .form .form-left, .form .form-right {
+        width: 100%;
+    }
+
+    .form input, .form textarea {
+        width: 100%;
+    }
+
+}
