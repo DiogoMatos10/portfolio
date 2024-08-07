@@ -2,10 +2,12 @@ import React, { useEffect, useState, useRef } from 'react';
 import './AboutContent.css';
 import { dataSkills, dataProjects } from '../../../data';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 function AboutContent() {
   const [skills, setSkills] = useState(dataSkills); 
-  const [projects, setProjects] = useState(dataProjects);
+/*   const [projects, setProjects] = useState(dataProjects);
+ */  const [ t ,i18n ] = useTranslation('global');
   const skillContainerRef = useRef(null);
 
   useEffect(() => {
@@ -58,18 +60,16 @@ function AboutContent() {
   const firstHalfSkills = skills.slice(0, Math.ceil(skills.length / 2));
   const secondHalfSkills = skills.slice(Math.ceil(skills.length / 2));
 
+  const projects = t('projects', { returnObjects: true });
+
   return (
     <div className="about-container">
       <div className="about-info">
-        <p className="titles">About</p>
-        <p className="paragraph">
-          I'm Diogo Matos. I'm 21 years old and recently graduated with a degree in
-          Computer Sciences Engineering from Évora, Portugal. I am from Portugal and am highly proactive, 
-          always eager to learn and work. My main focus is on web and mobile development.
-        </p>
+        <p className="titles">{t("about.about")}</p>
+        <p className="paragraph">{t("about.paragraph")}</p>
       </div>
       <div className="projects">
-        <p className="titles">Projects</p>
+        <p className="titles">{t("about.projects")}</p>
         <div className='project-content'>
           {projects.map(project => (
             project.link ? (
@@ -96,11 +96,11 @@ function AboutContent() {
               </div>
             )
           ))}
-          <Link className="see-more" to={"https://github.com/DiogoMatos10?tab=repositories"}><p>Click here to see more ↗</p></Link>
+          <Link className="see-more" to={"https://github.com/DiogoMatos10?tab=repositories"}><p>{t("about.click")}</p></Link>
         </div>
       </div>
       <div className="skills" ref={skillContainerRef}>
-        <p className="titles">Digital Skills</p>
+        <p className="titles">{t("about.skills")}</p>
         <div className="skills-content">
           <div className="skill-column">
             {firstHalfSkills.map(skill => (

@@ -1,14 +1,59 @@
 {
-    "header":{
-        "about":"Sobre",
-        "experience":"Experiência",
-        "contact":"Contacto"
+    "header": {
+        "about": "Sobre",
+        "experience": "Experiência",
+        "contact": "Contacto"
     },
-    "footer":{
-        "info":"Desenhado no Figma e desenvolvido em Visual Studio Code. Construído com React e CSS."
+    "footer": {
+        "info": "Desenhado no Figma e desenvolvido em Visual Studio Code. Construído com React e CSS."
     },
-    "home":{
-        "hello":"Olá, eu sou o Diogo",
-        "paragraph":"Licenciei-me em Engenharia Informática. Através do meu curso e dos estágios que realizei, desenvolvi competências de programação significativas. Atualmente estou me a focar e a melhorar as minhas capacidades de desenvolvimento web, principalmente com a framework React."
-    }
+    "home": {
+        "hello": "Olá, eu sou o Diogo",
+        "paragraph": "Licenciei-me em Engenharia Informática. Através do meu curso e dos estágios que realizei, desenvolvi competências de programação significativas. Atualmente estou me a focar e a melhorar as minhas capacidades de desenvolvimento web, principalmente com a framework React."
+    },
+    "about": {
+        "about": "Sobre",
+        "paragraph": "O meu nome é Diogo Matos. Tenho 21 anos e recentemente licenciei me em Engenharia Informática na Universidade de Évora, Portugal. Sou de Portugal, sou bastante proativo e com uma grande vontade para aprender e trabalhar. O meu principal foco está no desenvolvimento web e mobile.",
+        "projects": "Projetos",
+        "click":"Clique aqui para ver mais ↗",
+        "skills": "Competências Digitais"
+    },
+    "projects": [
+        {
+            "name": "Projetos de Tecnologias Web",
+            "description": "Um projeto focado principalmente no desenvolvimento front-end, enquanto outro foi um projeto de desenvolvimento full-stack.",
+            "technologies": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Java",
+                "JSP",
+                "SpringBoot",
+                "Rest",
+                "JDBC",
+                "PostgreSQL"
+            ],
+            "link": "https://github.com/DiogoMatos10/Uni/tree/main/TW"
+        },
+        {
+            "name": "Projetos de Sistemas Distribuídos",
+            "description": "No primeiro projeto, implementei a execução remota de métodos dentro da mesma rede. O segundo projeto envolveu o desenvolvimento de uma API REST para gerir a comunicação client-server e o acesso aos dados.",
+            "technologies": [
+                "Java",
+                "Java RMI",
+                "REST",
+                "JDBC",
+                "PostgreSQL"
+            ],
+            "link": "https://github.com/DiogoMatos10/Uni/tree/main/SDist"
+        },
+        {
+            "name": "Projeto em OutSystems",
+            "description": "Este projeto foi concluído durante um estágio extracurricular na KPMG Portugal. Desenvolvi uma Reactive App para gerir projetos, seus managers e recursos.",
+            "technologies": [
+                "OutSystems"
+            ],
+            "link": null
+        }
+    ]
 }
