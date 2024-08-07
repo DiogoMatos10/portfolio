@@ -1,0 +1,207 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.experience-container{
+    padding: 80px 25px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    min-width: 350px;
+}
+
+.experience-container .titles{
+    margin-left: 40px;
+}
+
+.timeline {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+.timeline-container:hover::before {
+    background: var(--secondary-color);
+    box-shadow: 8px 12px 8px 0 rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    border-radius: 10px;
+    background: var(--glass-background-color);
+    box-shadow: var(--glass-box-shadow);
+    backdrop-filter: var(--glass-backdrop-filter);
+    -webkit-backdrop-filter: var(--glass-webkit-backdrop-filter);
+    border: var(--glass-border);    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-container {
+    padding: 15px 30px;
+    position: relative;
+    background: inherit;
+    width: 50%;
+}
+
+
+.timeline-container.left {
+    left: 0;
+}
+
+.timeline-container.right {
+    left: 50%;
+}
+
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 48px;
+    right: -7.5px;
+    border-radius: 50px;
+    background: var(--glass-background-color);
+    box-shadow: var(--glass-box-shadow);
+    backdrop-filter: var(--glass-backdrop-filter);
+    -webkit-backdrop-filter: var(--glass-webkit-backdrop-filter);
+    border: var(--glass-border);
+    z-index: 1;
+    transition: 0.3s, box-shadow 0.3s;
+}
+
+.timeline-container.right::after {
+    left: -8.5px;
+}
+
+  .timeline-container .timeline-date {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    top: 48px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 1;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.timeline-container.left .timeline-date {
+    right: -75px;
+}
+
+.timeline-container.right .timeline-date {
+    left: -75px;
+}
+
+.timeline-container .timeline-content {
+    padding: 30px;
+    position: relative;
+    border-radius: 5px;
+    background: var(--glass-background-color);
+    box-shadow: var(--glass-box-shadow);
+    backdrop-filter: var(--glass-backdrop-filter);
+    -webkit-backdrop-filter: var(--glass-webkit-backdrop-filter);
+    border: var(--glass-border);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+
+.timeline-container .timeline-content:hover {
+    background: var(--secondary-color);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    border-color: var(--hover-color);
+}
+
+.timeline-container:hover::after {
+    background: var(--secondary-color);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    border-color: var(--hover-color);
+}
+
+.timeline-container:hover .timeline-content {
+    background: var(--secondary-color);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    border-color: var(--hover-color);
+}
+
+.timeline-container:hover .timeline-date {
+    transform: translateY(-6px);    
+}
+
+.timeline-container.right .timeline-content {
+    border-radius: 5px;
+}
+
+.timeline-container .timeline-content .timeline-title {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: normal;
+    color: var(--text-color);
+}
+
+.timeline-container .timeline-content .timeline-description {
+    margin: 0;
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--bar-color);
+}
+
+@media (max-width: 650px) {
+    .timeline::after {
+        left: 90px;
+    }
+
+    .experience-container{
+        padding: 50px;
+    }
+    
+
+    .experience-container .titles{
+        margin-left: 0px;
+    }
+
+    .timeline{
+        padding: 20px;
+        margin-left: -35px;
+    }
+
+    .timeline-container {
+        width: calc(100% + 85px);
+        padding-left: 90px;
+    }
+
+    .timeline-container .timeline-content {
+        padding: 15px;
+    }
+    
+    .timeline-container.right {
+        left: 0%;
+    }
+
+    .timeline-container.left::after, 
+    .timeline-container.right::after {
+        left: 62px;
+    }
+
+
+    .timeline-container.left .timeline-date,
+    .timeline-container.right .timeline-date {
+        right: auto;
+        left: 15px;
+    }
+    
+    
+}

@@ -64,10 +64,10 @@ a:link, a:visited{
 }
 
 .project-container:hover {
-    background: var(--secondary-color); /* Change background color on hover */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
-    transform: translateY(-5px); /* Slight lift effect */
-    border-color: var(--hover-color); /* Change border color on hover */
+    background: var(--secondary-color); 
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); 
+    border-color: var(--hover-color); 
 }
 
 .project-container .project-title{

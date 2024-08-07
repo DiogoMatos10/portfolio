@@ -55,5 +55,33 @@
             ],
             "link": null
         }
-    ]
+    ],
+    "experience":{
+        "title":"Experiência",
+        "timeline1":{
+            "title":"Licenciatura Engenharia Mecatrónica, Universidade de Évora",
+            "date":"2021",
+            "description":"Iniciei o curso, mas durante o primeiro ano percebi que a minha verdadeira paixão era a programação."
+        },
+        "timeline2":{
+            "title":"Licenciatura Engenharia Informática, Universidade de Évora",
+            "date":"2022",
+            "description":"Ingressei neste curso após o único ano do anterior, aproveitando as equivalências e focando-me finalmente em algo de que gosto. "
+        },
+        "timeline3":{
+            "title":"Estágio Extracurricular, KPMG Portugal",
+            "date":"2023",
+            "description":"Realizei um estágio com duração de 1 ano onde realizei um projeto em OutSystems, mais precisamente uma Reactive App."
+        },
+        "timeline4":{
+            "title":"Estágio Curricular, KMPG Portugal",
+            "date":"2024",
+            "description":"Passado uns meses voltei a realizar mais um estágio na empresa mas desta vez com duração de 5 meses, onde tive o objetivo de analisar e testar soluções no mercado para o papel de Analytics para Reactive Apps em OutSystems, onde pela primeira vez tive contacto com o mundo de Web Analytics."
+        },
+        "timeline5":{
+            "title":"Conclusão da Licenciatura em Engenharia Informática",
+            "date":"2021",
+            "description":"Passado dois anos conclui a licenciatura."
+        }
+    }
 }

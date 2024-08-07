@@ -11,12 +11,12 @@
         "hello": "Welcome to my Website",
         "paragraph": "I'm Diogo Matos, I have a degree in Computer Engineering. Here you can learn more about me, such as my academic and professional trajectory. Explore my projects to see what I've worked on, discover my digital skills and discover my experience. Feel free to get in touch if you have any questions or would like to connect."
     },
-    "about":{
-        "about":"About",
-        "paragraph":"I'm Diogo Matos. I'm 21-year-old portuguese and recently graduated with a degree in Computer Science Engineering from Évora, Portugal. Through my coursework and internships, I have developed significant programming skills. I am highly proactive and always eager to learn and work. Currently, I am focused on refining my web and mobile development abilities, particularly with the React framework, and I am actively seeking job opportunities in these areas.",
-        "projects":"Projects",
-        "click":"Click here to see more ↗",
-        "skills":"Digital Skills"
+    "about": {
+        "about": "About",
+        "paragraph": "I'm Diogo Matos. I'm 21-year-old portuguese and recently graduated with a degree in Computer Science Engineering from Évora, Portugal. Through my coursework and internships, I have developed significant programming skills. I am highly proactive and always eager to learn and work. Currently, I am focused on refining my web and mobile development abilities, particularly with the React framework, and I am actively seeking job opportunities in these areas.",
+        "projects": "Projects",
+        "click": "Click here to see more ↗",
+        "skills": "Digital Skills"
     },
     "projects": [
         {
@@ -55,5 +55,33 @@
             ],
             "link": null
         }
-    ]
+    ],
+    "experience": {
+        "title":"Experience",
+        "timeline1": {
+            "title": "Bachelor's Degree in Mechatronics Engineering, University of Évora",
+            "date":"2021",
+            "description": "I started the course, but during the first year, I realized that my true passion was programming."
+        },
+        "timeline2": {
+            "title": "Bachelor's Degree in Computer Engineering, University of Évora",
+            "date":"2022",
+            "description": "I enrolled in this course after my single year in the previous one, taking advantage of credit transfers and finally focusing on something that I enjoy."
+        },
+        "timeline3": {
+            "title": "Extracurricular Internship, KPMG Portugal",
+            "date":"2023",
+            "description": "I completed a one-year internship where I worked on a project in OutSystems, specifically a Reactive App."
+        },
+        "timeline4": {
+            "title": "Curricular Internship, KPMG Portugal",
+            "date":"2024",
+            "description": "A few months later, I undertook another internship at the company, this time lasting five months. The objective was to analyze and test market solutions for Analytics roles in Reactive Apps in OutSystems, where I had my first exposure to Web Analytics."
+        },
+        "timeline5": {
+            "title": "Completion of Bachelor's Degree in Computer Engineering",
+            "date":"2024",
+            "description": "After two years, I completed the degree."
+        }
+    }
 }
