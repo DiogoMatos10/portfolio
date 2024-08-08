@@ -18,35 +18,43 @@
     margin-right: 20px;
 }
 
-.form {
+form {
     display: flex;
     justify-content: space-between;
     gap: 80px;
     width: 100%;
 }
 
-.form .form-left, .form .form-right {
+form .form-left, form .form-right {
     display: flex;
     flex-direction: column;
-    gap: 30px; 
-    width: calc(50% - 20px); 
+    gap: 30px;
+    width: calc(50% - 20px);
+    position: relative; 
 }
 
-.form textarea {
+.form-group {
+    position: relative;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+}
+
+form textarea {
     resize: none;
     height: 110px;
 }
 
-.form input, .form textarea {
+form input, form textarea {
     border-radius: 5px;
     background-color: #D3ECEC;
     font-size: 16px;
     color: #333;
-    transition: all 0.3s ease;
     border: 1px solid transparent;
 }
 
-.form input:not(#fsubmit), .form textarea {
+form input:not(#fsubmit), form textarea {
     padding: 10px;
 }
 
@@ -63,6 +71,7 @@ input#fsubmit {
     color: #D3ECEC;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input#fsubmit:hover {
@@ -83,24 +92,64 @@ input#fmessage {
     font-family: 'Roboto Condensed', "sans-serif";
 }
 
-@media (max-width: 650px) {
+.error-message {
+    position: absolute;
+    font-weight: bold;
+    color: #B22828;
+    font-size: 12px;
+    left: calc(100% - 60px);
+    margin-top: 5px; 
+    width: 100%;
+    box-sizing: border-box;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.form-group input.error, .form-group textarea.error {
+    border: 3px inset #B22828;
+    transition: border 0.2s ease, background-color 0.2s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border: 3px solid #3A9088;
+    box-shadow: 0 0 2px black;
+    font-family: 'Roboto Condensed', "sans-serif";
+}
+
+@media (max-width: 1000px) {
+    .contact-container .titles {
+        width: calc(50% - 20px);
+    }
+
+    form .form-left, form .form-right {
+        gap: 30px;
+        width: calc(50% - 20px);
+    }
+  
+    form {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
     .contact-container .titles {
         width: 100%;
         margin-left: 0;
     }
 
-    .form {
+    form {
         flex-direction: column;
         gap: 30px;
-
     }
     
-    .form .form-left, .form .form-right {
+    form .form-left, form .form-right {
         width: 100%;
     }
 
-    .form input, .form textarea {
+    form input, form textarea {
         width: 100%;
     }
-
 }

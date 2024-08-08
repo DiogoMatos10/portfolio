@@ -1,17 +1,92 @@
 import "./ContactContent.css";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import React, { useState, useRef, useEffect } from "react";
 
+function ContactContent() {
+    const [t] = useTranslation("global");
+    const [formStatus, setFormStatus] = useState("Send");
+    const [errors, setErrors] = useState({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+    });
 
-function ContactContent(){
-    return(
+    const formRef = useRef(null); // Referência ao formulário
+
+    const validateForm = (e) => {
+        e.preventDefault();
+        let newErrors = { name: "", email: "", subject: "", message: "" };
+        let isValid = true;
+    
+        const { name, email, subject, message } = e.target.elements;
+        
+        e.target.querySelectorAll('.form-group input, .form-group textarea').forEach(input => {
+            input.classList.remove('error');
+        });
+    
+        if (!name.value.trim()) {
+            newErrors.name = "Required";
+            isValid = false;
+            name.classList.add('error');
+        }
+        if (!email.value.trim()) {
+            newErrors.email = "Required";
+            isValid = false;
+            email.classList.add('error');
+        } else if (!/\S+@\S+\.\S+/.test(email.value)) {
+            newErrors.email = "Invalid";
+            isValid = false;
+            email.classList.add('error');
+        }
+        if (!subject.value.trim()) {
+            newErrors.subject = "Required";
+            isValid = false;
+            subject.classList.add('error');
+        }
+        if (!message.value.trim()) {
+            newErrors.message = "Required";
+            isValid = false;
+            message.classList.add('error');
+        }
+    
+        setErrors(newErrors);
+    
+        if (isValid) {
+            setFormStatus('Submitting');
+            console.log({
+                name: name.value,
+                email: email.value,
+                message: message.value,
+            });
+        }
+    };
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (formRef.current && !formRef.current.contains(event.target)) {
+                setErrors({
+                    name: "",
+                    email: "",
+                    subject: "",
+                    message: ""
+                });
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+
+    return (
         <div className="contact-container">
-            <p className="titles">Feel free to reach out to me through any of the following channels</p>
+            <p className="titles">{t("contact.title")}</p>
             <div className="links-icon">
                 <Link className="github-icon" to={'https://github.com/DiogoMatos10'}>
                     <svg width="35" height="35" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clipPath="url(#clip0_211_51)">
-                            <path d="M15 31.6667C6.66671 34.1667 6.66671 27.5 3.33337 26.6667M26.6667 36.6667V30.2167C26.7292 29.4219 26.6219 28.623 26.3517 27.873C26.0816 27.123 25.6549 26.439 25.1 25.8667C30.3334 25.2833 35.8334 23.3 35.8334 14.2C35.8329 11.873 34.9379 9.63533 33.3334 7.95C34.0931 5.91417 34.0394 3.66391 33.1834 1.66666C33.1834 1.66666 31.2167 1.08333 26.6667 4.13333C22.8467 3.09803 18.82 3.09803 15 4.13333C10.45 1.08333 8.48337 1.66666 8.48337 1.66666C7.62733 3.66391 7.57361 5.91417 8.33337 7.95C6.71692 9.64783 5.82091 11.9058 5.83337 14.25C5.83337 23.2833 11.3334 25.2667 16.5667 25.9167C16.0184 26.4833 15.5955 27.159 15.3256 27.8999C15.0556 28.6407 14.9447 29.4301 15 30.2167V36.6667" 
+                            <path d="M15 31.6667C6.66671 34.1667 6.66671 27.5 3.33337 26.6667M26.6667 36.6667V30.2167C26.7292 29.4219 26.6219 28.623 26.3517 27.873C26.0816 27.123 25.6549 26.439 25.1 25.8667C30.3334 25.2833 35.8334 23.3 35.8334 14.2C35.8329 11.873 34.9379 9.63533 33.3334 7.95C34.0931 5.91417 34.0394 3.66391 33.1834 1.66666C33.1834 1.66666 31.2167 1.08333 26.6667 4.13333C22.8467 3.09803 18.82 3.09803 15 4.13333C10.45 1.08333 8.48337 1.66666 8.48337 1.66666C7.62733 3.66391 7.57361 5.91417 8.33337 7.95C6.71692 9.64783 5.82091 11.9058 5.83337 14.25C5.83337 23.2833 11.3334 25.2667 16.5667 25.9167C16.0184 26.4833 15.5955 27.159 15.3256 27.8999C15.0556 28.6407 14.9447 29.4301 15 30.2167V36.6667"
                             strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                         </g>
                         <defs>
@@ -23,27 +98,39 @@ function ContactContent(){
                 </Link>
                 <Link className="linkdin-icon" to={'https://www.linkedin.com/in/diogo-matos-72b387274'}>
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M26.6667 13.3333C29.3189 13.3333 31.8624 14.3869 33.7378 16.2622C35.6131 18.1376 36.6667 20.6811 36.6667 23.3333V35H30V23.3333C30 22.4493 29.6489 21.6014 29.0237 20.9763C28.3986 20.3512 27.5508 20 26.6667 20C25.7827 20 24.9348 20.3512 24.3097 20.9763C23.6846 21.6014 23.3334 22.4493 23.3334 23.3333V35H16.6667V23.3333C16.6667 20.6811 17.7203 18.1376 19.5956 16.2622C21.471 14.3869 24.0145 13.3333 26.6667 13.3333Z" 
+                        <path d="M26.6667 13.3333C29.3189 13.3333 31.8624 14.3869 33.7378 16.2622C35.6131 18.1376 36.6667 20.6811 36.6667 23.3333V35H30V23.3333C30 22.4493 29.6489 21.6014 29.0237 20.9763C28.3986 20.3512 27.5508 20 26.6667 20C25.7827 20 24.9348 20.3512 24.3097 20.9763C23.6846 21.6014 23.3334 22.4493 23.3334 23.3333V35H16.6667V23.3333C16.6667 20.6811 17.7203 18.1376 19.5956 16.2622C21.471 14.3869 24.0145 13.3333 26.6667 13.3333Z"
                         strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                         <path d="M10 15H3.33337V35H10V15Z"  strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M6.66671 9.99998C8.50766 9.99998 10 8.5076 10 6.66665C10 4.8257 8.50766 3.33331 6.66671 3.33331C4.82576 3.33331 3.33337 4.8257 3.33337 6.66665C3.33337 8.5076 4.82576 9.99998 6.66671 9.99998Z"  
+                        <path d="M6.66671 9.99998C8.50766 9.99998 10 8.5076 10 6.66665C10 4.8257 8.50766 3.33331 6.66671 3.33331C4.82576 3.33331 3.33337 4.8257 3.33337 6.66665C3.33337 8.5076 4.82576 9.99998 6.66671 9.99998Z"
                         strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                 </Link>
             </div>
-            <div className="form">
+            <form onSubmit={validateForm} noValidate ref={formRef}>
                 <div className="form-left">
-                    <input type="text" id="fname" name="name" placeholder="Name" />
-                    <input type="email" id="femail" name="email" placeholder="Email" />
-                    <input type="text" id="fsubject" name="subject" placeholder="Subject" />
+                    <div className="form-group">
+                        <input type="text" id="fname" name="name" placeholder={t("contact.fname")} />
+                        {errors.name && <p className="error-message">{errors.name}</p>}
+                    </div>
+                    <div className="form-group">
+                        <input type="email" id="femail" name="email" placeholder={t("contact.femail")} />
+                        {errors.email && <p className="error-message">{errors.email}</p>}
+                    </div>
+                    <div className="form-group">
+                        <input type="text" id="fsubject" name="subject" placeholder={t("contact.fsubject")} />
+                        {errors.subject && <p className="error-message">{errors.subject}</p>}
+                    </div>
                 </div>
                 <div className="form-right">
-                    <textarea id="fmessage" name="message" placeholder="Your message" />
-                    <input type="submit" id="fsubmit" value="Send" />
+                    <div className="form-group">
+                        <textarea id="fmessage" name="message" placeholder={t("contact.fmessage")} />
+                        {errors.message && <p className="error-message">{errors.message}</p>}
+                    </div>
+                    <input type="submit" id="fsubmit" value={t("contact.fsubmit")} />
                 </div>
-            </div>
+            </form>
         </div>
     );
 }
 
-export default ContactContent
+export default ContactContent;

@@ -83,5 +83,13 @@
             "date":"2024",
             "description": "After two years, I completed the degree."
         }
+    },
+    "contact":{
+        "title":"Feel free to reach out to me through any of the following channels.",
+        "fname":"Name",
+        "femail":"Email",
+        "fsubject":"Subject",
+        "fmessage":"Your message",
+        "fsubmit":"Send"
     }
 }
