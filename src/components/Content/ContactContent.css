@@ -98,10 +98,15 @@ input#fmessage {
     color: #B22828;
     font-size: 12px;
     left: calc(100% - 60px);
-    margin-top: 5px; 
-    width: 100%;
+    margin-top: 5px;
+    width: 50px;
+    text-align: right;
     box-sizing: border-box;
     transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.error-message p{
+    right: 0px; 
 }
 
 .form-group input.error, .form-group textarea.error {
