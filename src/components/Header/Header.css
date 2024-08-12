@@ -1,11 +1,9 @@
-
 body {
     background-color: var(--primary-color);
     margin: 0;
     padding: 0;
     min-width: 250px;
 }
-
 
 .header {
     padding: 30px 50px;
@@ -21,6 +19,7 @@ body {
 
 .header.menu-open {
     background-color: var(--secondary-color);
+    transition: opacity 0.3s ease;
 }
 
 .logo-container {
@@ -60,7 +59,6 @@ body {
     background-color: var(--secondary-color);
     overflow: hidden;
     max-height: 0;
-    transition: max-height;
     max-height: 500px; 
     animation: slideDown 0.4s ease forwards;
 }
@@ -121,6 +119,7 @@ body {
     position: relative;
     width: 30px;
     height: 30px;
+    z-index: 3; 
 }
 
 .hamburger-icon {
@@ -159,7 +158,7 @@ svg.hamburger-icon:hover {
     transform: rotate(-45deg);
 }
 
-.globe-button, .theme-toggle{
+.theme-toggle{
     background: none;
     border: none;
     cursor: pointer;
@@ -168,15 +167,16 @@ svg.hamburger-icon:hover {
     align-items: center;
     justify-content: center;
     fill: none;
+    margin-left: -10px;
 }
 
 
-.globe-button svg,.theme-toggle svg {
+.theme-toggle svg {
     stroke: var(--text-color);
     transition: stroke 0.3s ease;
 }
 
-.globe-button:hover svg, .theme-toggle:hover svg {
+.theme-toggle:hover svg {
     stroke: var(--hover-color);
 }
 
@@ -184,10 +184,22 @@ svg.hamburger-icon:hover {
     display: flex;
     justify-content: center;
     margin-left: 20px;
+    
+}
+
+.language-toggle {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.language-toggle:hover {
+    color: var(--hover-color);
 }
 
 
-.nav-options-container.active .globe-button, 
 .nav-options-container.active .theme-toggle{
     margin: 0 10px; 
 }
@@ -196,7 +208,7 @@ svg.hamburger-icon:hover {
     .hamburger {
         display: block;
     }
-
+    
     .nav-options-container {
         display: none;
         flex-direction: column;

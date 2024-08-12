@@ -1,24 +1,18 @@
-import React, { useState,useEffect,useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import { ThemeMode } from "../../App";
 import { useTranslation } from "react-i18next";
 
-
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [closing, setClosing] = useState(false);
     const { themeMode, setThemeMode } = useContext(ThemeMode);
-    const [ t ,i18n ] = useTranslation('global');
+    const [t, i18n] = useTranslation('global');
     const [language, setLanguage] = useState(i18n.language);
 
     const handleChangeLanguage = (lang) => {
         i18n.changeLanguage(lang).then(() => setLanguage(lang));
-    };
-
-    const toggleLanguage = () => {
-        const newLang = language === 'en' ? 'pt' : 'en';
-        handleChangeLanguage(newLang);
     };
 
     const toggleMenu = () => {
@@ -29,7 +23,7 @@ function Header() {
             }, 400);
             setTimeout(() => {
                 setMenuOpen(false);
-            })
+            }, 400);
         } else {
             setMenuOpen(true);
         }
@@ -59,9 +53,6 @@ function Header() {
         setThemeMode(prevMode => !prevMode);
     };
 
-  
-
-
     return (
         <div className={`header ${menuOpen ? 'menu-open' : ''}`}>
             <div className="logo-container">
@@ -81,12 +72,9 @@ function Header() {
                     
                     <div className="button-container">
                         <li>
-                            <button className="globe-button" onClick={toggleLanguage}>
-                                <svg width="24" height="24" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M32.0834 17.5C32.0834 25.5541 25.5542 32.0833 17.5 32.0833M32.0834 17.5C32.0834 9.44584 25.5542 2.91666 17.5 2.91666M32.0834 17.5H2.91669M17.5 32.0833C9.44587 32.0833 2.91669 25.5541 2.91669 17.5M17.5 32.0833C21.1477 28.0899 23.2207 22.9074 23.3334 17.5C23.2207 12.0925 21.1477 6.91009 17.5 2.91666M17.5 32.0833C13.8523 28.0899 11.7793 22.9074 11.6667 17.5C11.7793 12.0925 13.8523 6.91009 17.5 2.91666M2.91669 17.5C2.91669 9.44584 9.44587 2.91666 17.5 2.91666"  
-                                    strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
-                            </button>
+                            <a href="#" onClick={() => handleChangeLanguage(language === 'en' ? 'pt' : 'en')} className="language-toggle">
+                                {language === 'en' ? 'PT' : 'EN'}
+                            </a>
                         </li>
                         <li>
                             <button className="theme-toggle" onClick={toggleDarkMode}>
