@@ -121,6 +121,10 @@ input:focus, textarea:focus {
     font-family: 'Roboto Condensed', "sans-serif";
 }
 
+textarea{
+    font-family: 'Roboto Condensed', "sans-serif";
+}
+
 @media (max-width: 1000px) {
     .contact-container .titles {
         width: calc(50% - 20px);
