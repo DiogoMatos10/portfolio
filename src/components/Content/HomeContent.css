@@ -14,12 +14,12 @@
 
 .home-container p{
     width: 50%;
-    font-family: "Roboto Regular","sans-serif";
 }
 
 .hello{
     margin-bottom: 30px;
     font-size: 30px;
+    font-family:'Roboto Regular','sans-serif';
 }
 
 .paragraph{
