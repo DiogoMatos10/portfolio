@@ -91,5 +91,10 @@
         "fsubject": "Assunto",
         "fmessage": "A sua mensagem",
         "fsubmit": "Enviar"
+    },
+    "cookies": {
+        "description": "Este site utiliza cookies para melhorar a sua experiência de utilizador. Ao usar o meu site, concorda com a utilização de cookies.",
+        "learn": "Saber Mais",
+        "accept": "Aceitar"
     }
 }

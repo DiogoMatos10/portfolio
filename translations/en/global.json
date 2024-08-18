@@ -91,5 +91,10 @@
         "fsubject":"Subject",
         "fmessage":"Your message",
         "fsubmit":"Send"
+    },
+    "cookies":{
+        "description":"This site use cookies to enhance your user experience. By using my website, you agree to my use of cookies.",
+        "learn":"Learn More",
+        "accept":"Accept"
     }
 }

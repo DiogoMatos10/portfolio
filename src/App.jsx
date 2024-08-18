@@ -1,18 +1,20 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import React, { useState, createContext, useEffect } from "react";
+import { useCookies } from "react-cookie";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
 import LoadingScreen from './pages/LoadingScreen';
+import Cookies from "./components/Cookies/Cookies";
 
-// context to manage the theme mode
 export const ThemeMode = createContext();
 
 function App() {
-  const [themeMode, setThemeMode] = useState(false); // false is dark and true is light
+  const [themeMode, setThemeMode] = useState(false); // false is dark mode, true is light
   const [loading, setLoading] = useState(true);
+  const [cookies, setCookie] = useCookies(["cookieConsent"]);
 
   useEffect(() => {
     if (themeMode) {
@@ -64,14 +66,17 @@ function App() {
       {loading ? <LoadingScreen /> :
         <ThemeMode.Provider value={{ themeMode, setThemeMode }}>
           <BrowserRouter>
-              <Routes>
-                <Route index element={<RouteWrapper element={<Home />} />} />
-                <Route path="/home" element={<RouteWrapper element={<Home />} />} />
-                <Route path="/about" element={<RouteWrapper element={<About />} />} />
-                <Route path="/experience" element={<RouteWrapper element={<Experience />} />} />
-                <Route path="/contact" element={<RouteWrapper element={<Contact />} />} />
-                <Route path="*" element={<RouteWrapper element={<NoPage />} />} />
-              </Routes>
+              <div className="app">
+                <Routes>
+                  <Route index element={<RouteWrapper element={<Home />} />} />
+                  <Route path="/home" element={<RouteWrapper element={<Home />} />} />
+                  <Route path="/about" element={<RouteWrapper element={<About />} />} />
+                  <Route path="/experience" element={<RouteWrapper element={<Experience />} />} />
+                  <Route path="/contact" element={<RouteWrapper element={<Contact />} />} />
+                  <Route path="*" element={<RouteWrapper element={<NoPage />} />} />
+                </Routes>
+                {!cookies.cookieConsent && <Cookies setCookie={setCookie} />}
+              </div>
           </BrowserRouter>
         </ThemeMode.Provider>
       }
