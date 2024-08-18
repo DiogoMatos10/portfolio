@@ -7,7 +7,7 @@ import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
 import LoadingScreen from './pages/LoadingScreen';
 
-// Context to manage the theme mode
+// context to manage the theme mode
 export const ThemeMode = createContext();
 
 function App() {
