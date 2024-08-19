@@ -38,6 +38,7 @@
     margin-left: -1px;
 }
 
+
 .timeline::before {
     content: ''; 
     position: absolute;
