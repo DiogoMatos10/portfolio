@@ -31,10 +31,27 @@
     box-shadow: var(--glass-box-shadow);
     backdrop-filter: var(--glass-backdrop-filter);
     -webkit-backdrop-filter: var(--glass-webkit-backdrop-filter);
-    border: var(--glass-border);    top: 0;
-    bottom: 0;
+    border: var(--glass-border);    
+    top: 0;
+    bottom: 0px; 
     left: 50%;
     margin-left: -1px;
+}
+
+.timeline::before {
+    content: ''; 
+    position: absolute;
+    bottom: -10px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 12px solid var(--glass-border-color); 
+    backdrop-filter: blur(2.3px); 
+    -webkit-backdrop-filter: blur(2.3px); 
+    z-index: 1;
+    width: 0;
+    height: 0;
 }
 
 .timeline-container {
@@ -193,6 +210,9 @@
         right: auto;
         left: 15px;
     }
-    
-    
+
+    .timeline::before {
+        left: 90px;
+        bottom: -10px;
+    }
 }

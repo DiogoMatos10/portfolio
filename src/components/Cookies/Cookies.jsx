@@ -1,21 +1,34 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import "./Cookies.css"
+import "./Cookies.css";
 
 function Cookies({ setCookie }) {
-    const [ t ,i18n ] = useTranslation('global');
+    const [t, i18n] = useTranslation('global');
 
-    const giveCookieConsent = () => {
-        setCookie("cookieConsent", true, { path: "/" });
+    const giveCookieConsent = (ctrl) => {
+        setCookie("cookieConsent", ctrl, { path: "/" });
     };
 
     return (
         <div className="cookie-consent">
             <p>
-            {t("cookies.description")}{" "}
-            <a href="{}">{t("cookies.learn")}</a>
+                {t("cookies.description")}{" "}
+                <a href="{}">{t("cookies.learn")}</a>
             </p>
-            <button className="cookie-button" onClick={giveCookieConsent}>{t("cookies.accept")}</button>
+            <div className="cookies-button-container">
+                <button 
+                    className="cookie-button-accept" 
+                    onClick={() => giveCookieConsent(true)}
+                >
+                    {t("cookies.accept")}
+                </button>
+                <button 
+                    className="cookie-button-reject" 
+                    onClick={() => giveCookieConsent(false)}
+                >
+                    {t("cookies.reject")}
+                </button>
+            </div>
         </div>
     );
 }
