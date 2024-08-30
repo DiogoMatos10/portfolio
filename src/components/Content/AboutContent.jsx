@@ -73,17 +73,19 @@ function AboutContent() {
         <div className='project-content'>
           {projects.map(project => (
             project.link ? (
-              <Link to={project.link} key={project.name}>
-                <div className='project-container'>
-                  <p className='project-title'>{project.name}</p>
-                  <p className='project-description'>{project.description}</p>
-                  <div className='project-tecnologies'>
-                    {project.technologies.map((tecnology, index) => (
-                      <p key={`${project.name}-tech-${index}`} className="tecnology-container">{tecnology}</p>
-                    ))}
+              <abbr title={t("projectsAbbr.abbrProject")}>
+                <Link to={project.link} key={project.name}>
+                  <div className='project-container'>
+                    <p className='project-title'>{project.name}</p>
+                    <p className='project-description'>{project.description}</p>
+                    <div className='project-tecnologies'>
+                      {project.technologies.map((tecnology, index) => (
+                        <p key={`${project.name}-tech-${index}`} className="tecnology-container">{tecnology}</p>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </abbr>
             ) : (
               <div className='project-container' key={project.name}>
                 <p className='project-title'>{project.name}</p>
@@ -96,7 +98,9 @@ function AboutContent() {
               </div>
             )
           ))}
-          <Link className="see-more" to={"https://github.com/DiogoMatos10?tab=repositories"}><p>{t("about.click")}</p></Link>
+          <abbr title={t("projectsAbbr.abbrMore")}>
+            <Link className="see-more" to={"https://github.com/DiogoMatos10?tab=repositories"}><p>{t("about.click")}</p></Link>
+          </abbr>
         </div>
       </div>
       <div className="skills" ref={skillContainerRef}>

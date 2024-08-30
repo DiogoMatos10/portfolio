@@ -7,6 +7,7 @@ import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
 import LoadingScreen from './pages/LoadingScreen';
+import Policy from "./pages/Policy"
 import Cookies from "./components/Cookies/Cookies";
 
 export const ThemeMode = createContext();
@@ -41,7 +42,7 @@ function App() {
     useEffect(() => {
       const rootElement = document.getElementById('root');
       const path = location.pathname;
-      const validPaths = ['/', '/home', '/about', '/experience', '/contact'];
+      const validPaths = ['/', '/home', '/about', '/experience', '/contact','/policy'];
 
       if (!validPaths.includes(path)) {
         rootElement.classList.add('no-page');
@@ -73,6 +74,7 @@ function App() {
                   <Route path="/about" element={<RouteWrapper element={<About />} />} />
                   <Route path="/experience" element={<RouteWrapper element={<Experience />} />} />
                   <Route path="/contact" element={<RouteWrapper element={<Contact />} />} />
+                  <Route path="/policy" element={<RouteWrapper element={<Policy />}/>} />
                   <Route path="*" element={<RouteWrapper element={<NoPage />} />} />
                 </Routes>
                 {!cookies.cookieConsent && <Cookies setCookie={setCookie} />}

@@ -180,6 +180,7 @@ svg.hamburger-icon:hover {
     stroke: var(--hover-color);
 }
 
+
 .button-container{
     display: flex;
     justify-content: center;

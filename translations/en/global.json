@@ -2,7 +2,10 @@
     "header": {
         "about": "About",
         "experience": "Experience",
-        "contact": "Contact"
+        "contact": "Contact",
+        "abbrHome":"Home",
+        "abbrLan":"Change Language",
+        "abbrTheme":"Change Theme"
     },
     "footer": {
         "info": "Designed in Figma and coded in Visual Studio Code. Built with React and CSS."
@@ -56,6 +59,10 @@
             "link": null
         }
     ],
+    "projectsAbbr":{
+        "abbrProject":"Project Repository",
+        "abbrMore": "My Repositories"
+    },
     "experience": {
         "title":"Experience",
         "timeline1": {

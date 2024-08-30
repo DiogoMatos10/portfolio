@@ -1,6 +1,8 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import "./Cookies.css";
+import { Link } from "react-router-dom";
+
 
 function Cookies({ setCookie }) {
     const [t, i18n] = useTranslation('global');
@@ -13,7 +15,7 @@ function Cookies({ setCookie }) {
         <div className="cookie-consent">
             <p>
                 {t("cookies.description")}{" "}
-                <a href="{}">{t("cookies.learn")}</a>
+                <Link to="/policy" >{t("cookies.learn")}</Link>
             </p>
             <div className="cookies-button-container">
                 <button 
