@@ -1,0 +1,46 @@
+.policy-container{
+    padding: 80px 25px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    min-width: 350px;
+}
+
+.policy-container .titles{
+    margin-left: 40px;
+}
+
+.policy-container .subtitles{
+    font-size: 25px;
+    margin-top: 60px;
+    margin-bottom: 25px;
+}
+
+.policy-container .paragraph{
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 10px;
+}
+
+.policy-container .suba{
+    font-family: 'Roboto Regular', 'sans-serif';
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+
+@media (max-width: 650px) {
+    .policy-container{
+        padding: 50px;
+    }
+
+    .policy-container .titles,
+    .policy-container .subtitles,
+    .policy-container .paragraph,
+    .policy-container .suba {
+        width: 100%;
+        margin-left:auto;
+        margin-right: auto;
+    }
+
+   
+}

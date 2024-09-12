@@ -2,57 +2,89 @@
     margin-top: auto;
     background-color: var(--primary-color);
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
     padding: 20px;
     color: var(--text-color);
-}
-
-
-.footer .arrow-up {
-    cursor: pointer;
-    margin-bottom: 10px;
-}
-
-.footer .arrow-up svg {
-    stroke: var(--text-color);
-    transition: stroke 0.4s;
-}
-
-.footer .arrow-up:hover svg {
-    stroke: var(--hover-color);
+    margin-bottom: 0px;
+    width: 100%;
 }
 
 .footer-content {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    font-size: 10px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    font-size: 12px;
 }
 
-.footer-content p {
-    margin: 5px 0;
+.footer-left {
+    text-align: left;
+}
+
+.footer-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; 
+    text-align: center;
+    gap: 2px;
+}
+
+.footer-center p {
+    margin: 0; 
+    line-height: 1.5;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-right a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.footer-right a:hover {
+    color: var(--hover-color);
 }
 
 @media (max-width: 768px) {
-    .footer {
-        padding: 15px;
+    .footer-content {
+        flex-direction: column-reverse; 
+        align-items: center;
+        text-align: center;
     }
-    
-    .footer-content p {
-        font-size: 10px;
+
+    .footer-left, .footer-right, .footer-center {
+        margin: 5px 0;
+    }
+
+    .footer-center {
+        order: 1;
+    }
+
+    .footer-center {
+        flex-direction: column; 
+        margin-bottom: 12px;
+    }
+
+    .footer-right {
+        order: 0; 
+    }
+
+    .footer-left {
+        order: -1; 
+    }
+
+    .footer-center p:first-child {
+        margin-bottom: 2px;
     }
 }
 
 @media (max-width: 480px) {
-    .footer {
-        padding: 10px;
-    }
-    
-    .footer-content p {
-        font-size: 8px;
+    .footer-content {
+        font-size: 10px;
     }
 }
-

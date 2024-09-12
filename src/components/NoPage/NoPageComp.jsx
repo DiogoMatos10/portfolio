@@ -1,7 +1,6 @@
 import "./NoPageComp.css"
 import { Link } from "react-router-dom";
 
-
 function NoPageComp(){
     return(
     <div className="container-404">

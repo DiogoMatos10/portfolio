@@ -8,7 +8,9 @@
         "abbrTheme":"Change Theme"
     },
     "footer": {
-        "info": "Designed in Figma and coded in Visual Studio Code. Built with React and CSS."
+        "info1": "Designed in Figma and coded in Visual Studio Code.",
+        "info2": "Built with React and CSS.",
+        "terms":"Terms and Conditions"
     },
     "home": {
         "hello": "Welcome to my Website",

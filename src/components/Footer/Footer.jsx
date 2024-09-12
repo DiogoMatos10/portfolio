@@ -1,29 +1,30 @@
 import { ThemeMode } from "../../App";
-import React, { useState,useEffect,useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Footer.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-
-function Footer(){
+function Footer() {
     const { themeMode, setThemeMode } = useContext(ThemeMode);
-    const [ t ,i18n ] = useTranslation('global');
-    let date=new Date()
+    const [t, i18n] = useTranslation("global");
+    let date = new Date();
 
-
-    return(
+    return (
         <div className={`footer`}>
-            {/* <Link className="arrow-up">
-                <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M32 24L24 16M24 16L16 24M24 16V32M44 24C44 35.0457 35.0457 44 24 44C12.9543 44 4 35.0457 4 24C4 12.9543 12.9543 4 24 4C35.0457 4 44 12.9543 44 24Z"  strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-            </Link> */}
             <div className="footer-content">
-                <p>{t("footer.info")}</p>
-                <p>&copy; {date.getFullYear()} Diogo Matos</p>
+                <div className="footer-left">
+                    <p>&copy; {date.getFullYear()} Diogo Matos</p>
+                </div>
+                <div className="footer-center">
+                    <p>{t("footer.info1")}</p>
+                    <p>{t("footer.info2")}</p>
+                </div>
+                <div className="footer-right">
+                    <Link to="/policy">{t("footer.terms")}</Link>
+                </div>
             </div>
         </div>
     );
 }
 
-export default Footer
+export default Footer;

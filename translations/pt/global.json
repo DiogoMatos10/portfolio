@@ -8,7 +8,9 @@
         "abbrTheme":"Mudar Tema"
     },
     "footer": {
-        "info": "Desenhado no Figma e desenvolvido em Visual Studio Code. Construído com React e CSS."
+        "info1": "Desenhado no Figma e desenvolvido em Visual Studio Code.",
+        "info2": "Construído com React e CSS.",
+        "terms": "Termos e Condições"
     },
     "home": {
         "hello": "Olá, eu sou o Diogo",

@@ -6,8 +6,8 @@ import { useTranslation } from 'react-i18next';
 
 function AboutContent() {
   const [skills, setSkills] = useState(dataSkills); 
-/*   const [projects, setProjects] = useState(dataProjects);
- */  const [ t ,i18n ] = useTranslation('global');
+  const [ t ,i18n ] = useTranslation('global');
+  const projects = t('projects', { returnObjects: true });
   const skillContainerRef = useRef(null);
 
   useEffect(() => {
@@ -60,7 +60,6 @@ function AboutContent() {
   const firstHalfSkills = skills.slice(0, Math.ceil(skills.length / 2));
   const secondHalfSkills = skills.slice(Math.ceil(skills.length / 2));
 
-  const projects = t('projects', { returnObjects: true });
 
   return (
     <div className="about-container">
