@@ -42,7 +42,7 @@ function App() {
     useEffect(() => {
       const rootElement = document.getElementById('root');
       const path = location.pathname;
-      const validPaths = ['/', '/home', '/about', '/experience', '/contact','/policy'];
+      const validPaths = ['/', '/home', '/about', '/experience', '/contact','/terms-conditions'];
 
       if (!validPaths.includes(path)) {
         rootElement.classList.add('no-page');
@@ -74,7 +74,7 @@ function App() {
                   <Route path="/about" element={<RouteWrapper element={<About />} />} />
                   <Route path="/experience" element={<RouteWrapper element={<Experience />} />} />
                   <Route path="/contact" element={<RouteWrapper element={<Contact />} />} />
-                  <Route path="/policy" element={<RouteWrapper element={<Policy />}/>} />
+                  <Route path="/terms-conditions" element={<RouteWrapper element={<Policy />}/>} />
                   <Route path="*" element={<RouteWrapper element={<NoPage />} />} />
                 </Routes>
                 {!cookies.cookieConsent && <Cookies setCookie={setCookie} />}

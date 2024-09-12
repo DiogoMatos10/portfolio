@@ -27,6 +27,17 @@
     margin-top: 40px;
 }
 
+.policy-container ul{
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 18px;
+}
+
+.policy-container li{
+    line-height: 2;
+    margin-bottom: 10px;
+}
+
 
 @media (max-width: 650px) {
     .policy-container{
