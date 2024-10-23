@@ -14,7 +14,7 @@
     margin-bottom: 50px;
 }
 
-.contact-container .links-icon > abbr {
+.links-icon > abbr {
     margin-right: 20px;
 }
 
@@ -25,139 +25,58 @@ form {
     width: 100%;
 }
 
-form .form-left, form .form-right {
+.form-left, .form-right {
     display: flex;
     flex-direction: column;
     gap: 30px;
     width: calc(50% - 20px);
-    position: relative; 
 }
 
-.form-group {
-    position: relative;
-}
-
-.form-group input, .form-group textarea {
-    width: 100%;
-}
-
-form textarea {
-    resize: none;
-    height: 110px;
-}
-
-form input, form textarea {
-    border-radius: 5px;
-    background-color: #D3ECEC;
-    font-size: 16px;
-    color: #333;
-    border: 1px solid transparent;
-}
-
-form input:not(#fsubmit), form textarea {
-    padding: 10px;
-}
-
-form {
-    width: 100%;
-}
-
-input#fname, input#femail, input#fsubject, input#fsubmit {
-    height: 40px;
-}
-
-input#fsubmit {
-    background-color: #3A9088;
-    color: #D3ECEC;
-    border: none;
-    cursor: pointer;
+button.MuiButton-root {
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-input#fsubmit:hover {
-    background-color: #2F7A6E;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.MuiCheckbox-root {
+    color: #3A9088;
 }
 
-* input {
-    padding: 0;
+.MuiCheckbox-root.Mui-checked {
+    color: #2F7A6E;
 }
 
-input#fmessage {
-    height: 90px;
-}
-
-::placeholder {
-    color: #616161;
-    font-family: 'Roboto Regular','sans-serif';
-}
-
-.error-message {
-    position: absolute;
-    font-weight: bold;
-    color: #B22828;
-    font-size: 12px;
-    left: calc(100% - 60px);
-    margin-top: 5px;
-    width: 50px;
-    text-align: right;
-    box-sizing: border-box;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
-}
-
-.error-message p{
-    right: 0px; 
-}
-
-.form-group input.error, .form-group textarea.error {
-    border: 3px inset #B22828;
-    transition: border 0.2s ease, background-color 0.2s ease;
-}
-
-form input:focus,form textarea:focus {
-    outline: none;
-    border: 3px solid #3A9088;
-    box-shadow: 0 0 2px black;
-}
-
-textarea:focus, textarea{
-    font-family: 'Roboto Regular', "sans-serif";
-}
-
+/* Responsividade */
 @media (max-width: 1000px) {
     .contact-container .titles {
         width: calc(50% - 20px);
     }
 
-    form .form-left, form .form-right {
-        gap: 30px;
-        width: calc(50% - 20px);
-    }
-  
     form {
-        display: flex;
         gap: 20px;
-        justify-content: space-between;
-        width: 100%;
     }
 }
 
 @media (max-width: 800px) {
     .contact-container .titles {
         width: 100%;
-        margin-left: 0;
     }
 
     form {
         flex-direction: column;
         gap: 30px;
     }
-    
+
     form .form-left, form .form-right {
         width: 100%;
     }
-
-    form input, form textarea {
-        width: 100%;
-    }
 }
+
+.contact-container span{
+    font-size: 16px;
+    font-family: 'Roboto Light', sans-serif;
+}
+
+
+.contact-container a {
+    color: var(--cookie-learn-color);
+}
+
