@@ -28,11 +28,11 @@
     line-height: 2;
 }
 
-.github-icon svg,.linkdin-icon svg {
+.github-icon svg,.linkdin-icon svg,.email-icon svg {
     stroke: var(--text-color);
 }
 
-.github-icon:hover svg, .linkdin-icon:hover svg {
+.github-icon:hover svg, .linkdin-icon:hover svg,.email-icon:hover svg {
     stroke: var(--hover-color);
 }
 

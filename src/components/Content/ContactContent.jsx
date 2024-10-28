@@ -79,174 +79,22 @@ function ContactContent() {
                     <Link className="linkdin-icon" to={'https://www.linkedin.com/in/diogo-matos-72b387274'} target="_blank">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M26.6667 13.3333C29.3189 13.3333 31.8624 14.3869 33.7378 16.2622C35.6131 18.1376 36.6667 20.6811 36.6667 23.3333V35H30V23.3333C30 22.4493 29.6489 21.6014 29.0237 20.9763C28.3986 20.3512 27.5508 20 26.6667 20C25.7827 20 24.9348 20.3512 24.3097 20.9763C23.6846 21.6014 23.3334 22.4493 23.3334 23.3333V35H16.6667V23.3333C16.6667 20.6811 17.7203 18.1376 19.5956 16.2622C21.471 14.3869 24.0145 13.3333 26.6667 13.3333Z"
-                                strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M10 15H3.33337V35H10V15Z" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                                strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M10 15H3.33337V35H10V15Z" strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" />
                             <path d="M6.66671 9.99998C8.50766 9.99998 10 8.5076 10 6.66665C10 4.8257 8.50766 3.33331 6.66671 3.33331C4.82576 3.33331 3.33337 4.8257 3.33337 6.66665C3.33337 8.5076 4.82576 9.99998 6.66671 9.99998Z"
-                                strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                                strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                     </Link>
                 </abbr>
+                <abbr title="Send a Email">
+                    <a href="mailto:diogo.matos.dev@outlook.com" className="email-icon">
+                        <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                            <path d="M44 12C44 9.8 42.2 8 40 8H8C5.8 8 4 9.8 4 12M44 12V36C44 38.2 42.2 40 40 40H8C5.8 40 4 38.2 4 36V12M44 12L24 26L4 12" 
+                                strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                    </a>
+                </abbr>
             </div>
-            <form onSubmit={validateForm} noValidate ref={formRef}>
-                <div className="form-left">
-                    <div className="form-group">
-                        <TextField
-                            autoComplete="off"
-                            id="outlined-name"
-                            name="name"
-                            label={t("contact.fname")}
-                            variant="outlined"
-                            error={!!errors.name}
-                            helperText={errors.name}
-                            fullWidth
-                            InputProps={{
-                                autoComplete: "new-name", 
-                                sx: {
-                                    color: "var(--input-color)",         
-                                   "&::placeholder": { color: "var(--text-color)" } 
-                                }
-                            }}
-                            sx={{
-                                "& label": { color: "var(--text-color)" }, // Cor da label padrão
-                                "& label.Mui-focused": { color: "var(--hover-color)" }, // Cor da label quando focada
-                                "& .MuiOutlinedInput-root": {
-                                    "& fieldset": { borderColor: "var(--text-color)" }, // Cor da borda
-                                    "&:hover fieldset": { borderColor: "var(--hover-color)" }, // Cor da borda no hover
-                                    "&.Mui-focused fieldset": { borderColor: "var(--hover-color)" } // Cor da borda quando focada
-                                }
-                            }}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <TextField
-                            autoComplete="off"
-                            id="outlined-email"
-                            name="email"
-                            label={t("contact.femail")}
-                            variant="outlined"
-                            error={!!errors.email}
-                            helperText={errors.email}
-                            fullWidth
-                            InputProps={{
-                                autoComplete: "new-email", 
-                                sx: {
-                                    color: "var(--input-color)",
-                                    "&::placeholder": { color: "var(--text-color)" } // Cor do placeholder
-                                }
-                            }}
-                            sx={{
-                                "& label": { color: "var(--text-color)" }, // Cor da label padrão
-                                "& label.Mui-focused": { color: "var(--hover-color)" }, // Cor da label quando focada
-                                "& .MuiOutlinedInput-root": {
-                                    "& fieldset": { borderColor: "var(--text-color)" }, // Cor da borda
-                                    "&:hover fieldset": { borderColor: "var(--hover-color)" }, // Cor da borda no hover
-                                    "&.Mui-focused fieldset": { borderColor: "var(--hover-color)" } // Cor da borda quando focada
-                                }
-                            }}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <TextField
-                            autoComplete="off"
-                            id="outlined-subject"
-                            name="subject"
-                            label={t("contact.fsubject")}
-                            variant="outlined"
-                            error={!!errors.subject}
-                            helperText={errors.subject}
-                            fullWidth
-                            InputProps={{
-                                autoComplete: "new-subject", 
-                                sx: {
-                                    color: "var(--input-color)",
-                                    "&::placeholder": { color: "var(--text-color)" } 
-                                }
-                            }}
-                            sx={{
-                                "& label": { color: "var(--text-color)" }, // Cor da label padrão
-                                "& label.Mui-focused": { color: "var(--hover-color)" }, // Cor da label quando focada
-                                "& .MuiOutlinedInput-root": {
-                                    "& fieldset": { borderColor: "var(--text-color)" }, // Cor da borda
-                                    "&:hover fieldset": { borderColor: "var(--hover-color)" }, // Cor da borda no hover
-                                    "&.Mui-focused fieldset": { borderColor: "var(--hover-color)" } // Cor da borda quando focada
-                                }
-                            }}
-                        />
-                    </div>
-                </div>
-                <div className="form-right">
-                    <div className="form-group">
-                        <TextField
-                            autoComplete="off"
-                            id="outlined-message"
-                            name="message"
-                            label={t("contact.fmessage")}
-                            variant="outlined"
-                            multiline
-                            rows={5}
-                            error={!!errors.message}
-                            helperText={errors.message}
-                            fullWidth
-                            InputProps={{
-                                autoComplete: "new-message", 
-                                sx: {
-                                    color: "var(--input-color)",
-                                    "&::placeholder": { color: "var(--text-color)" } // Cor do placeholder
-                                }
-                            }}
-                            sx={{
-                                "& label": { color: "var(--text-color)" }, // Cor da label padrão
-                                "& label.Mui-focused": { color: "var(--hover-color)" }, // Cor da label quando focada
-                                "& .MuiOutlinedInput-root": {
-                                    "& fieldset": { borderColor: "var(--text-color)" }, // Cor da borda
-                                    "&:hover fieldset": { borderColor: "var(--hover-color)" }, // Cor da borda no hover
-                                    "&.Mui-focused fieldset": { borderColor: "var(--hover-color)" } // Cor da borda quando focada
-                                }
-                            }}
-                        />
-                    </div>
-                    <FormControlLabel
-                        control={
-                            <Checkbox
-                                checked={agree}
-                                onChange={() => setAgree(!agree)}
-                                sx={{
-                                    color: "var(--text-color)",
-                                    "&.Mui-checked": { color: "hsl(0, 0%, 50%);" }
-                                }}
-                            />
-                        }
-                        label={
-                            <p>
-                                {t("contact.terms_part1")}{" "}
-                                <Link to="/terms-conditions">{t("contact.terms_link")}</Link>{" "}
-                                {t("contact.terms_part3")}{" "}
-                                <Link to="/terms-conditions">{t("contact.privacy_policy_link")}</Link>.
-                            </p>
-                        }
-                    />
-                    <Button
-    variant="contained"
-    type="submit"
-    sx={{
-        backgroundColor: "hsl(0, 0%, 50%);", 
-        color: "#D3ECEC", 
-        "&:hover": {
-            backgroundColor: "hsl(0, 0%, 40%);"
-        },
-        "&.Mui-disabled": {
-            backgroundColor: "hsl(0, 0%, 50%);", 
-            color: "#D3ECEC",
-            opacity: 0.5, 
-        }
-    }}
-    disabled={!agree}
->
-    {t("contact.fsubmit")}
-</Button>
-
-                </div>
-            </form>
         </div>
     );
 }
