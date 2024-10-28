@@ -10,13 +10,23 @@ import LoadingScreen from './pages/LoadingScreen';
 import Policy from "./pages/Policy"
 import Cookies from "./components/Cookies/Cookies";
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import ReactGA from "react-ga";
 
+const TRACKING_ID="dddd";
 export const ThemeMode = createContext();
 
 function App() {
   const [themeMode, setThemeMode] = useState(false); // false is dark mode, true is light
   const [loading, setLoading] = useState(true);
   const [cookies, setCookie] = useCookies(["cookieConsent"]);
+
+  // Inicialização do GA apenas com consentimento
+  useEffect(() => {
+    if (cookies.cookieConsent) {
+      ReactGA.initialize(TRACKING_ID);
+      ReactGA.pageview(window.location.pathname); 
+    }
+  }, [cookies.cookieConsent]); 
 
   useEffect(() => {
     if (themeMode) {

@@ -1,13 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './AboutContent.css';
-import { dataSkills, dataProjects } from '../../../data';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 function AboutContent() {
-  const [skills, setSkills] = useState(dataSkills); 
   const [ t ,i18n ] = useTranslation('global');
   const projects = t('projects', { returnObjects: true });
+  const skills=t('dataSkills',{ returnObjects: true })
   const skillContainerRef = useRef(null);
 
   useEffect(() => {

@@ -2,14 +2,26 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import "./Cookies.css";
 import { Link } from "react-router-dom";
+import ReactGA from "react-ga";
+
+const TRACKING_ID="dddd";
 
 function Cookies({ setCookie }) {
     const [t, i18n] = useTranslation('global');
     const [isVisible, setIsVisible] = useState(true); 
 
     const giveCookieConsent = (ctrl) => {
-        setCookie("cookieConsent", ctrl, { path: "/" });
+        const oneMonthFromNow = new Date();
+        oneMonthFromNow.setMonth(oneMonthFromNow.getMonth() + 1);
+
+        setCookie("cookieConsent", ctrl, { path: "/" , expires: oneMonthFromNow});
         setIsVisible(false); 
+
+        if (ctrl) {
+            // Inicializa o Google Analytics se o usuário aceitar
+            ReactGA.initialize(TRACKING_ID); // Insira o seu ID de acompanhamento
+            ReactGA.pageview(window.location.pathname);
+        }
     };
 
     if (!isVisible) return null; 
