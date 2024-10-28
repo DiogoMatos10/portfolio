@@ -1,7 +1,6 @@
 .experience-container{
     padding: 80px 25px;
     margin-top: 20px;
-    margin-bottom: 100px;
     min-width: 350px;
 }
 
@@ -56,7 +55,7 @@
 }
 
 .timeline-container {
-    padding: 15px 30px;
+    padding: 15px 40px;
     position: relative;
     background: inherit;
     width: 50%;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll"; // Mantenha a importação do react-scroll para rolagem suave
+import { useNavigate } from "react-router-dom"; // Adicione esta importação
 import "./Header.css";
 import { ThemeMode } from "../../App";
 import { useTranslation } from "react-i18next";
@@ -10,6 +11,7 @@ function Header() {
     const { themeMode, setThemeMode } = useContext(ThemeMode);
     const [t, i18n] = useTranslation('global');
     const [language, setLanguage] = useState(i18n.language);
+    const navigate = useNavigate(); // Crie uma instância do hook useNavigate
 
     const handleChangeLanguage = (lang) => {
         i18n.changeLanguage(lang).then(() => setLanguage(lang));
@@ -53,11 +55,34 @@ function Header() {
         setThemeMode(prevMode => !prevMode);
     };
 
+    const handleNavigation = (targetClass) => {
+        navigate(`/#${targetClass}`);        
+        setMenuOpen(false);
+    };
+
+    useEffect(() => {
+        const handleHashChange = () => {
+            const hash = window.location.hash.replace('#', '');
+            const elements = document.getElementsByClassName(hash);
+            if (elements.length > 0) {
+                elements[0].scrollIntoView({ behavior: 'smooth' });
+            }
+        };
+
+        handleHashChange(); // Verifique o hash na montagem do componente
+
+        window.addEventListener('hashchange', handleHashChange); // Adicione um ouvinte para mudanças de hash
+
+        return () => {
+            window.removeEventListener('hashchange', handleHashChange); // Limpeza do ouvinte
+        };
+    }, []);
+
     return (
         <div className={`header ${menuOpen ? 'menu-open' : ''}`}>
             <div className="logo-container">
                 <abbr title={t("header.abbrHome")}>
-                    <Link to="/home"><img className="logo-picture" src="public/images/dm@2.png" alt="Diogo's Logo" /></Link>
+                    <a href="/" onClick={(e) => { e.preventDefault(); navigate('/'); }}><img className="logo-picture" src="public/images/dm@2.png" alt="Diogo's Logo" /></a>
                 </abbr>
             </div>
             <div className={`hamburger ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
@@ -68,9 +93,9 @@ function Header() {
             </div>
             <div className={`nav-options-container ${menuOpen ? 'active' : closing ? 'closing' : ''}`}>
                 <ul className="nav-options">
-                    <li><Link to="/about" onClick={() => setMenuOpen(false)}>{t("header.about")}</Link></li>
-                    <li><Link to="/experience" onClick={() => setMenuOpen(false)}>{t("header.experience")}</Link></li>
-                    <li><Link to="/contact" onClick={() => setMenuOpen(false)}>{t("header.contact")}</Link></li>
+                    <li><a href="#" onClick={() => handleNavigation('about')}>{t("header.about")}</a></li>
+                    <li><a href="#" onClick={() => handleNavigation('experience')}>{t("header.experience")}</a></li>
+                    <li><a href="#" onClick={() => handleNavigation('contact')}>{t("header.contact")}</a></li>
                     
                     <div className="button-container">
                         <li>
@@ -103,7 +128,6 @@ function Header() {
                                     )}
                                 </button>
                             </abbr>
-                           
                         </li>
                     </div>
                 </ul>

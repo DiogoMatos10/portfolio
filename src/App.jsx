@@ -9,6 +9,7 @@ import NoPage from "./pages/NoPage";
 import LoadingScreen from './pages/LoadingScreen';
 import Policy from "./pages/Policy"
 import Cookies from "./components/Cookies/Cookies";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 export const ThemeMode = createContext();
 
@@ -82,6 +83,7 @@ function App() {
           </BrowserRouter>
         </ThemeMode.Provider>
       }
+      <ScrollToTopButton/>
     </>
   );
 }
