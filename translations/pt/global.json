@@ -99,7 +99,13 @@
         "femail": "Email",
         "fsubject": "Assunto",
         "fmessage": "A sua mensagem",
-        "fsubmit": "Enviar"
+        "fsubmit": "Enviar",
+        "terms_part1": "Concordo com os",
+        "terms_link": "Termos e Condições",
+        "terms_part3": "e reconheço a",
+        "privacy_policy_link": "Política de Privacidade",
+        "required": "Obrigatório",
+        "invalid": "Inválido"     
     },
     "cookies": {
         "description": "Este site utiliza cookies para melhorar a sua experiência de utilizador. Ao usar o meu site, concorda com a utilização de cookies.",

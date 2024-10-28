@@ -25,22 +25,22 @@ function ContactContent() {
         const { name, email, subject, message } = e.target.elements;
 
         if (!name.value.trim()) {
-            newErrors.name = "Required";
+            newErrors.name = t("contact.required");
             isValid = false;
         }
         if (!email.value.trim()) {
-            newErrors.email = "Required";
+            newErrors.email = t("contact.required");
             isValid = false;
         } else if (!/\S+@\S+\.\S+/.test(email.value)) {
-            newErrors.email = "Invalid";
+            newErrors.email = t("contact.invalid");
             isValid = false;
         }
         if (!subject.value.trim()) {
-            newErrors.subject = "Required";
+            newErrors.subject = t("contact.required");
             isValid = false;
         }
         if (!message.value.trim()) {
-            newErrors.message = "Required";
+            newErrors.message = t("contact.required");
             isValid = false;
         }
 
@@ -61,7 +61,7 @@ function ContactContent() {
             <p className="titles">{t("contact.title")}</p>
             <div className="links-icon">
                 <abbr title="GitHub">
-                    <Link className="github-icon" to={'https://github.com/DiogoMatos10'}>
+                    <Link className="github-icon" to={'https://github.com/DiogoMatos10'} target="_blank">
                         <svg width="35" height="35" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clipPath="url(#clip0_211_51)">
                                 <path d="M15 31.6667C6.66671 34.1667 6.66671 27.5 3.33337 26.6667M26.6667 36.6667V30.2167C26.7292 29.4219 26.6219 28.623 26.3517 27.873C26.0816 27.123 25.6549 26.439 25.1 25.8667C30.3334 25.2833 35.8334 23.3 35.8334 14.2C35.8329 11.873 34.9379 9.63533 33.3334 7.95C34.0931 5.91417 34.0394 3.66391 33.1834 1.66666C33.1834 1.66666 31.2167 1.08333 26.6667 4.13333C22.8467 3.09803 18.82 3.09803 15 4.13333C10.45 1.08333 8.48337 1.66666 8.48337 1.66666C7.62733 3.66391 7.57361 5.91417 8.33337 7.95C6.71692 9.64783 5.82091 11.9058 5.83337 14.25C5.83337 23.2833 11.3334 25.2667 16.5667 25.9167C16.0184 26.4833 15.5955 27.159 15.3256 27.8999C15.0556 28.6407 14.9447 29.4301 15 30.2167V36.6667"
@@ -76,7 +76,7 @@ function ContactContent() {
                     </Link>
                 </abbr>
                 <abbr title="Linkedin">
-                    <Link className="linkdin-icon" to={'https://www.linkedin.com/in/diogo-matos-72b387274'}>
+                    <Link className="linkdin-icon" to={'https://www.linkedin.com/in/diogo-matos-72b387274'} target="_blank">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M26.6667 13.3333C29.3189 13.3333 31.8624 14.3869 33.7378 16.2622C35.6131 18.1376 36.6667 20.6811 36.6667 23.3333V35H30V23.3333C30 22.4493 29.6489 21.6014 29.0237 20.9763C28.3986 20.3512 27.5508 20 26.6667 20C25.7827 20 24.9348 20.3512 24.3097 20.9763C23.6846 21.6014 23.3334 22.4493 23.3334 23.3333V35H16.6667V23.3333C16.6667 20.6811 17.7203 18.1376 19.5956 16.2622C21.471 14.3869 24.0145 13.3333 26.6667 13.3333Z"
                                 strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -102,10 +102,9 @@ function ContactContent() {
                             InputProps={{
                                 autoComplete: "new-name", 
                                 sx: {
-                                    color: "#D3ECEC",
-                                    "&::placeholder": { color: "var(--text-color)" } // Cor do placeholder
+                                    color: "var(--input-color)",         
+                                   "&::placeholder": { color: "var(--text-color)" } 
                                 }
-
                             }}
                             sx={{
                                 "& label": { color: "var(--text-color)" }, // Cor da label padrão
@@ -129,9 +128,9 @@ function ContactContent() {
                             helperText={errors.email}
                             fullWidth
                             InputProps={{
-                                autoComplete: "new-email", // Desativa o preenchimento automático
+                                autoComplete: "new-email", 
                                 sx: {
-                                    color: "#D3ECEC",
+                                    color: "var(--input-color)",
                                     "&::placeholder": { color: "var(--text-color)" } // Cor do placeholder
                                 }
                             }}
@@ -159,8 +158,8 @@ function ContactContent() {
                             InputProps={{
                                 autoComplete: "new-subject", 
                                 sx: {
-                                    color: "#D3ECEC",
-                                    "&::placeholder": { color: "var(--text-color)" } // Cor do placeholder
+                                    color: "var(--input-color)",
+                                    "&::placeholder": { color: "var(--text-color)" } 
                                 }
                             }}
                             sx={{
@@ -191,7 +190,7 @@ function ContactContent() {
                             InputProps={{
                                 autoComplete: "new-message", 
                                 sx: {
-                                    color: "#D3ECEC",
+                                    color: "var(--input-color)",
                                     "&::placeholder": { color: "var(--text-color)" } // Cor do placeholder
                                 }
                             }}
@@ -219,28 +218,33 @@ function ContactContent() {
                         }
                         label={
                             <p>
-                                I agree to the <Link to="/terms-conditions">Terms and Conditions</Link> and acknowledge the <Link to="/terms-conditions">Privacy Policy</Link>.
+                                {t("contact.terms_part1")}{" "}
+                                <Link to="/terms-conditions">{t("contact.terms_link")}</Link>{" "}
+                                {t("contact.terms_part3")}{" "}
+                                <Link to="/terms-conditions">{t("contact.privacy_policy_link")}</Link>.
                             </p>
                         }
                     />
                     <Button
-                        variant="contained"
-                        type="submit"
-                        sx={{
-                            backgroundColor: "hsl(0, 0%, 50%);",
-                            color: "#D3ECEC",
-                            "&:hover": {
-                                backgroundColor: "hsl(0, 0%, 40%);"
-                            },
-                            "&.Mui-disabled": {
-                                backgroundColor: 'transparent', // Mantém fundo transparente quando desabilitado
-                                color:"transparent"
-                            }
-                        }}
-                        disabled={!agree}
-                    >
-                        {t("contact.fsubmit")}
-                    </Button>
+    variant="contained"
+    type="submit"
+    sx={{
+        backgroundColor: "hsl(0, 0%, 50%);", 
+        color: "#D3ECEC", 
+        "&:hover": {
+            backgroundColor: "hsl(0, 0%, 40%);"
+        },
+        "&.Mui-disabled": {
+            backgroundColor: "hsl(0, 0%, 50%);", 
+            color: "#D3ECEC",
+            opacity: 0.5, 
+        }
+    }}
+    disabled={!agree}
+>
+    {t("contact.fsubmit")}
+</Button>
+
                 </div>
             </form>
         </div>

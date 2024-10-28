@@ -35,6 +35,8 @@
     --bar-color: #475472;
     --percentage-color:var(--text-color);
     --percentage-background:#182339;
+
+    --input-color:#D3ECEC;
 }
 
 .light-mode {
@@ -58,6 +60,8 @@
     --bar-color: #A3A3A3;
     --percentage-color:var(--text-color);
     --percentage-background:#E0E0E0;
+
+    --input-color:#0A0A0A;
 }
 
 

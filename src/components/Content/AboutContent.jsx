@@ -73,7 +73,7 @@ function AboutContent() {
           {projects.map(project => (
             project.link ? (
               <abbr title={t("projectsAbbr.abbrProject")}>
-                <Link to={project.link} key={project.name}>
+                <Link to={project.link} key={project.name} target="_blank">
                   <div className='project-container'>
                     <p className='project-title'>{project.name}</p>
                     <p className='project-description'>{project.description}</p>
@@ -98,7 +98,7 @@ function AboutContent() {
             )
           ))}
           <abbr title={t("projectsAbbr.abbrMore")}>
-            <Link className="see-more" to={"https://github.com/DiogoMatos10?tab=repositories"}><p>{t("about.click")}</p></Link>
+            <Link className="see-more" to={"https://github.com/DiogoMatos10?tab=repositories"} target="_blank"><p>{t("about.click")}</p></Link>
           </abbr>
         </div>
       </div>

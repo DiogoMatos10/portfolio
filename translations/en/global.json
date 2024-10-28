@@ -14,7 +14,7 @@
     },
     "home": {
         "hello": "Welcome to my Website",
-        "paragraph": "I'm Diogo Matos, I have a degree in Computer Engineering. Here you can learn more about me, such as my academic and professional trajectory. Explore my projects to see what I've worked on, discover my digital skills and discover my experience. Feel free to get in touch if you have any questions or would like to connect."
+        "paragraph": "I'm Diogo Matos, I have a degree in Computer Science Engineering. Here you can learn more about me, such as my academic and professional trajectory. Explore my projects to see what I've worked on, discover my digital skills and discover my experience. Feel free to get in touch if you have any questions or would like to connect."
     },
     "about": {
         "about": "About",
@@ -73,7 +73,7 @@
             "description": "I started the course, but during the first year, I realized that my true passion was programming."
         },
         "timeline2": {
-            "title": "Bachelor's Degree in Computer Engineering, University of Évora",
+            "title": "Bachelor's Degree in Computer Science Engineering, University of Évora",
             "date":"2022",
             "description": "I enrolled in this course after my single year in the previous one, taking advantage of credit transfers and finally focusing on something that I enjoy."
         },
@@ -88,7 +88,7 @@
             "description": "A few months later, I undertook another internship at the company, this time lasting five months. The objective was to analyze and test market solutions for Analytics roles in Reactive Apps in OutSystems, where I had my first exposure to Web Analytics."
         },
         "timeline5": {
-            "title": "Completion of Bachelor's Degree in Computer Engineering",
+            "title": "Completion of Bachelor's Degree in Computer Science Engineering",
             "date":"2024",
             "description": "After two years, I completed the degree."
         }
@@ -99,7 +99,13 @@
         "femail":"Email",
         "fsubject":"Subject",
         "fmessage":"Your message",
-        "fsubmit":"Send"
+        "fsubmit":"Send",
+        "terms_part1": "I agree to the",
+        "terms_link": "Terms and Conditions",
+        "terms_part3": "and acknowledge the",
+        "privacy_policy_link": "Privacy Policy",
+        "required": "Required",
+        "invalid": "Invalid"     
     },
     "cookies":{
         "description":"This site use cookies to enhance your user experience. By using my website, you agree to my use of cookies.",

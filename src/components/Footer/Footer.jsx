@@ -20,7 +20,7 @@ function Footer() {
                     <p>{t("footer.info2")}</p>
                 </div>
                 <div className="footer-right">
-                    <Link to="/terms-conditions">{t("footer.terms")}</Link>
+                    <Link to="/terms-conditions" target="_blank">{t("footer.terms")}</Link>
                 </div>
             </div>
         </div>

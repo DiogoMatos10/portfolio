@@ -1,5 +1,6 @@
 import "./ExperienceContent.css";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 function ExperienceContent() {
     const [t, i18n] = useTranslation("global");
@@ -8,20 +9,27 @@ function ExperienceContent() {
         <div className="experience-container">
             <p className="titles">{t("experience.title")}</p>
             <div className="timeline">
-                <div className="timeline-container left">
-                    <div class="timeline-date">{t("experience.timeline1.date")}</div>
-                    <div class="timeline-content">
-                        <p className="timeline-title">{t("experience.timeline1.title")}</p>
-                        <p className="timeline-description">{t("experience.timeline1.description")}</p>
+                
+                <Link to={'https://www.uevora.pt/en/study/courses/bachelors-and-integrated-master-degrees?cod=9751'} target="_blank">
+                    <div className="timeline-container left">
+                        <div class="timeline-date">{t("experience.timeline1.date")}</div>
+                        <div class="timeline-content">
+                            <p className="timeline-title">{t("experience.timeline1.title")}</p>
+                            <p className="timeline-description">{t("experience.timeline1.description")}</p>
+                        </div>
                     </div>
-                </div>
-                <div className="timeline-container right">
-                    <div class="timeline-date">{t("experience.timeline2.date")}</div>
-                    <div class="timeline-content">
-                        <p className="timeline-title">{t("experience.timeline2.title")}</p>
-                        <p className="timeline-description">{t("experience.timeline2.description")}</p>
+                </Link>
+
+                <Link to={'https://www.uevora.pt/en/study/courses/bachelors-and-integrated-master-degrees?curso=2570'} target="_blank">
+                    <div className="timeline-container right">
+                        <div class="timeline-date">{t("experience.timeline2.date")}</div>
+                        <div class="timeline-content">
+                            <p className="timeline-title">{t("experience.timeline2.title")}</p>
+                            <p className="timeline-description">{t("experience.timeline2.description")}</p>
+                        </div>
                     </div>
-                </div>
+                </Link>
+
                 <div className="timeline-container left">
                     <div class="timeline-date">{t("experience.timeline3.date")}</div>
                     <div class="timeline-content">
