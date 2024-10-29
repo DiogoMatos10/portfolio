@@ -67,11 +67,11 @@ body {
     min-width: 350px;
 }
 
-.titles, .nav-options{
+.titles, .nav-options, .project-title, .timeline-title, .link-title{
     font-weight: 400 !important; 
 }
 
-p:not(.titles, .nav-options) {
+p:not(.titles, .nav-options, .project-title,.timeline-title,.link-title) {
     font-weight: 300 !important;
 }
 

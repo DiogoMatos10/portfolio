@@ -7,7 +7,7 @@ import About from "./pages/About";
 import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
-import Loading from './pages/Loading';
+import Loading from './components/Loading/Loading';
 import Policy from "./pages/Policy";
 import Cookies from "./components/Cookies/Cookies";
 import ScrollToTopButton from "./components/ScrollToTop/ScrollToTopButton";

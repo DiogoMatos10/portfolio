@@ -1,3 +1,5 @@
+import './Loading.css'
+
 const Loading = () => {
     return (
         <div id="loader-container">
