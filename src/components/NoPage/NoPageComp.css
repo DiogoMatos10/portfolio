@@ -16,6 +16,9 @@
     overflow: hidden;
 }
 
+.container-404{
+    margin: auto;
+}
 
 .info-error {
     background: rgba(82, 82, 82, 0.14);

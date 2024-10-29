@@ -1,5 +1,4 @@
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
+
 import React from "react";
 import HomeContent from "../components/HomeContent/HomeContent";
 import AboutContent from "../components/AboutContent/AboutContent";
@@ -25,7 +24,6 @@ function Home() {
 
   return (
     <>
-      <Header />
       <section id="home" className="home">
           <HomeContent/>
       </section>
@@ -38,7 +36,6 @@ function Home() {
       <section id="contact" className="contact">
         <ContactContent/>  
       </section>
-      <Footer />
     </>
   );
 }

@@ -12,6 +12,8 @@ import Policy from "./pages/Policy";
 import Cookies from "./components/Cookies/Cookies";
 import ScrollToTopButton from "./components/ScrollToTop/ScrollToTopButton";
 import ReactGA from "react-ga";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 const TRACKING_ID = "dddd";
 export const ThemeMode = createContext();
@@ -36,7 +38,6 @@ function App() {
 
   const [cookies, setCookie] = useCookies(["cookieConsent"]);
 
-
   useEffect(() => {
     if (cookies.cookieConsent) {
       ReactGA.initialize(TRACKING_ID);
@@ -44,14 +45,12 @@ function App() {
     }
   }, [cookies.cookieConsent]);
 
-
   useEffect(() => {
     document.body.classList.toggle('light-mode', themeMode);
     document.body.classList.toggle('dark-mode', !themeMode);
 
     localStorage.setItem("themeMode", JSON.stringify(themeMode));
   }, [themeMode]);
-
 
   useEffect(() => {
     if (loading) {
@@ -62,12 +61,8 @@ function App() {
     }
   }, [loading]);
 
-
-  if (loading) {
-    return <Loading />;
-  }
-
   
+
   function RouteWrapper({ element }) {
     const location = useLocation();
 
@@ -89,12 +84,19 @@ function App() {
     return element;
   }
 
+  const isNoPage = (location.pathname !== '/' && location.pathname !== '/terms-conditions');
 
+
+  if (loading && !isNoPage) {
+    return <Loading />;
+  }
+  
   return (
     <>
       <ThemeMode.Provider value={{ themeMode, setThemeMode }}>
         <BrowserRouter>
           <div className="app">
+            {!isNoPage && <Header />}
             <Routes>
               <Route index element={<RouteWrapper element={<Home />} />} />
               <Route path="/home" element={<RouteWrapper element={<Home />} />} />
@@ -104,7 +106,8 @@ function App() {
               <Route path="/terms-conditions" element={<RouteWrapper element={<Policy />} />} />
               <Route path="*" element={<RouteWrapper element={<NoPage />} />} />
             </Routes>
-            {!cookies.cookieConsent && <Cookies setCookie={setCookie} />}
+            {!isNoPage &&  <Footer />}
+            {!isNoPage && !cookies.cookieConsent && <Cookies setCookie={setCookie} />}
           </div>
         </BrowserRouter>
       </ThemeMode.Provider>
