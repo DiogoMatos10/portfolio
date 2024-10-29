@@ -126,9 +126,8 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 
-/* Estilo para Firefox */
 * {
-    scrollbar-width: thin; /* Define a largura para 'fina' */
-    scrollbar-color: var(--text-color) var(--primary-color); /* thumb, track */
+    scrollbar-width: thin; 
+    scrollbar-color: var(--text-color) var(--primary-color); 
 }
 
