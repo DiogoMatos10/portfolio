@@ -31,8 +31,6 @@
     margin-top: 50px;
 }
 
-/* Projects */
-
 .project-content{
     text-decoration: none;
 }
@@ -122,8 +120,6 @@ a:link, a:visited{
 .see-more p:hover{
     color: var(--hover-color);
 }
-
-/* Skills */
 
 .skills {
     width: calc(100% - 80px);
@@ -229,8 +225,6 @@ a:link, a:visited{
     to {
     }
 }
-
-/* Mobile and Tablet version */
 
 @media (max-width: 1000px) {
 

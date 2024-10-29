@@ -13,12 +13,12 @@ function Home() {
   const location = useLocation();
 
   useEffect(() => {
-    const hash = location.hash; // Obtém o hash da URL
+    const hash = location.hash; 
 
     if (hash) {
-        const element = document.querySelector(hash); // Seleciona o elemento pelo hash
+        const element = document.querySelector(hash); 
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' }); // Rolagem suave até o elemento
+            element.scrollIntoView({ behavior: 'smooth' });
         }
     }
   }, [location]);

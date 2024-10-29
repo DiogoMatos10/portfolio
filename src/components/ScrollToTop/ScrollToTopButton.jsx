@@ -4,8 +4,8 @@ import './ScrollToTopButton.css';
 export const ScrollToTopButton = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [progress, setProgress] = useState(0);
-    const pathRef = useRef(null); // Referência ao elemento path
-    const [pathLength, setPathLength] = useState(0); // Estado para armazenar o comprimento do caminho
+    const pathRef = useRef(null); 
+    const [pathLength, setPathLength] = useState(0); 
 
     const toggleVisibility = () => {
         setIsVisible(window.pageYOffset > 50);
@@ -15,14 +15,11 @@ export const ScrollToTopButton = () => {
         const scrollTop = window.scrollY;
         const height = document.documentElement.scrollHeight - window.innerHeight;
 
-        // Verifica se o comprimento do conteúdo é maior que zero
         if (height > 0 && pathLength > 0) {
             const progressPercent = (scrollTop / height) * pathLength; 
-            // Ajuste para garantir que não exceda o comprimento total
             const adjustedProgress = Math.min(progressPercent, pathLength);
             setProgress(adjustedProgress);
         } else {
-            // Se o comprimento do conteúdo ou o caminho for zero, reseta o progresso
             setProgress(0);
         }
     };
@@ -37,41 +34,37 @@ export const ScrollToTopButton = () => {
     const calculatePathLength = () => {
         if (pathRef.current) {
             const length = pathRef.current.getTotalLength();
-            setPathLength(length); // Atualiza o comprimento do caminho
-            updateProgress(); // Atualiza a progressão após definir o comprimento
+            setPathLength(length); 
+            updateProgress(); 
         }
     };
 
     useEffect(() => {
-        // Atualiza o comprimento do caminho e o progresso sempre que a página for carregada ou mudada
         calculatePathLength();
 
-        // Adiciona event listeners
         window.addEventListener('scroll', toggleVisibility);
         window.addEventListener('scroll', updateProgress);
 
         return () => {
-            // Remove event listeners
             window.removeEventListener('scroll', toggleVisibility);
             window.removeEventListener('scroll', updateProgress);
         };
-    }, [pathLength]); // Adiciona pathLength como dependência
+    }, [pathLength]); 
 
     return (
         <div>
-            {/* Barra de progresso */}
             <div className={`progress-wrap ${isVisible ? 'active-progress' : ''}`} onClick={scrollToTop}>
                 <svg className="progress-circle" width="100%" height="100%" viewBox="-1 -1 102 102">
                     <path
-                        ref={pathRef} // Adiciona a referência ao elemento path
+                        ref={pathRef}
                         d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
                         style={{
                             strokeDasharray: `${pathLength} ${pathLength}`,
-                            strokeDashoffset: `${pathLength - progress}`, // Ajuste do deslocamento
+                            strokeDashoffset: `${pathLength - progress}`, 
                         }}
                     />
                 </svg>
-                <div className="icon">&#8679;</div> {/* Ícone de seta para cima */}
+                <div className="icon">&#8679;</div> 
             </div>
         </div>
     );

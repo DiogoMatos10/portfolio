@@ -1,34 +1,34 @@
 .progress-wrap {
     position: fixed;
-    right: 40px; /* Ajuste a posição horizontal */
-    bottom: 125px; /* Ajuste a posição vertical */
-    height: 50px; /* Altura do botão */
-    width: 50px; /* Largura do botão */
+    right: 40px; 
+    bottom: 135px; 
+    height: 50px;
+    width: 50px; 
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: var(--glass-background-color); /* Fundo do botão */
-    color: var(--hover-color); /* Cor do ícone */
-    box-shadow: var(--glass-box-shadow); /* Sombra do botão */
+    background-color: var(--glass-background-color); 
+    color: var(--hover-color);
+    box-shadow: var(--glass-box-shadow); 
     backdrop-filter: var(--glass-backdrop-filter);
     border: var(--glass-border);
-    opacity: 0; /* Inicialmente invisível */
-    visibility: hidden; /* Inicialmente invisível */
-    transform: translateY(15px); /* Animação de aparecer */
-    transition: all 200ms ease; /* Transição suave */
-    z-index: 1000; /* Certifique-se de que esteja acima de outros elementos */
+    opacity: 0; 
+    visibility: hidden; 
+    transform: translateY(15px); 
+    transition: all 200ms ease; 
+    z-index: 1000; 
 }
 
 .progress-wrap.active-progress {
-    opacity: 1; /* Visível quando ativo */
-    visibility: visible; /* Visível quando ativo */
-    transform: translateY(0); /* Animação de subir */
+    opacity: 1; 
+    visibility: visible; 
+    transform: translateY(0); 
 }
 
 .progress-circle {
-    position: absolute; /* Para sobrepor o círculo de progresso */
+    position: absolute; 
     top: 0;
     left: 0;
     width: 100%;
@@ -36,15 +36,14 @@
 }
 
 .icon {
-    position: relative; /* Para posicionar o ícone */
-    font-size: 20px; /* Tamanho do ícone */
-    z-index: 1; /* Acima do círculo de progresso */
+    position: relative; 
+    font-size: 20px; 
+    z-index: 1;
 }
 
-/* Estilo para o caminho da barra de progresso */
 .progress-circle path {
     fill: none;
-    stroke: var(--hover-color); /* Cor da barra de progresso */
-    stroke-width: 4; /* Espessura da barra de progresso */
-    transition: stroke-dashoffset 0.5s ease; /* Transição suave para o progresso */
+    stroke: var(--hover-color);
+    stroke-width: 4; 
+    transition: stroke-dashoffset 0.5s ease; 
 }

@@ -18,8 +18,7 @@ function Cookies({ setCookie }) {
         setIsVisible(false); 
 
         if (ctrl) {
-            // Inicializa o Google Analytics se o usuário aceitar
-            ReactGA.initialize(TRACKING_ID); // Insira o seu ID de acompanhamento
+            ReactGA.initialize(TRACKING_ID); 
             ReactGA.pageview(window.location.pathname);
         }
     };

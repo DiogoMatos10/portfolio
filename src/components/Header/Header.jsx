@@ -71,12 +71,12 @@ function Header() {
             }
         };
 
-        handleHashChange(); // Verifique o hash na montagem do componente
+        handleHashChange(); 
 
-        window.addEventListener('hashchange', handleHashChange); // Adicione um ouvinte para mudanças de hash
+        window.addEventListener('hashchange', handleHashChange); 
 
         return () => {
-            window.removeEventListener('hashchange', handleHashChange); // Limpeza do ouvinte
+            window.removeEventListener('hashchange', handleHashChange); 
         };
     }, []);
 

@@ -7,7 +7,7 @@ import About from "./pages/About";
 import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
-import LoadingScreen from './pages/LoadingScreen';
+import Loading from './pages/Loading';
 import Policy from "./pages/Policy";
 import Cookies from "./components/Cookies/Cookies";
 import ScrollToTopButton from "./components/ScrollToTop/ScrollToTopButton";
@@ -16,14 +16,26 @@ import ReactGA from "react-ga";
 const TRACKING_ID = "dddd";
 export const ThemeMode = createContext();
 
+const EXPIRATION_TIME = 60000;
+
 function App() {
   const [themeMode, setThemeMode] = useState(() => {
-    // Recupera do localStorage; se não houver, define como false (dark mode)
     return JSON.parse(localStorage.getItem("themeMode")) || false;
   });
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    const storedData = JSON.parse(localStorage.getItem("hasVisited"));
+    const now = Date.now();
+
+    if (storedData && now - storedData.timestamp < EXPIRATION_TIME) {
+      return false; 
+    } else {
+      return true; 
+    }
+  });
+
   const [cookies, setCookie] = useCookies(["cookieConsent"]);
+
 
   useEffect(() => {
     if (cookies.cookieConsent) {
@@ -32,23 +44,30 @@ function App() {
     }
   }, [cookies.cookieConsent]);
 
+
   useEffect(() => {
     document.body.classList.toggle('light-mode', themeMode);
     document.body.classList.toggle('dark-mode', !themeMode);
 
-    // Salva o modo no localStorage
     localStorage.setItem("themeMode", JSON.stringify(themeMode));
   }, [themeMode]);
 
+
   useEffect(() => {
-    const loadData = async () => {
-      await new Promise(resolve => setTimeout(resolve, 0));
-      setLoading(false);
-    };
+    if (loading) {
+      setTimeout(() => {
+        setLoading(false);
+        localStorage.setItem("hasVisited", JSON.stringify({ timestamp: Date.now() }));
+      }, 3300); 
+    }
+  }, [loading]);
 
-    loadData();
-  }, []);
 
+  if (loading) {
+    return <Loading />;
+  }
+
+  
   function RouteWrapper({ element }) {
     const location = useLocation();
 
@@ -70,27 +89,27 @@ function App() {
     return element;
   }
 
+
   return (
     <>
-      {loading ? <LoadingScreen /> :
-        <ThemeMode.Provider value={{ themeMode, setThemeMode }}>
-          <BrowserRouter>
-            <div className="app">
-              <Routes>
-                <Route index element={<RouteWrapper element={<Home />} />} />
-                <Route path="/home" element={<RouteWrapper element={<Home />} />} />
-                <Route path="/about" element={<RouteWrapper element={<About />} />} />
-                <Route path="/experience" element={<RouteWrapper element={<Experience />} />} />
-                <Route path="/contact" element={<RouteWrapper element={<Contact />} />} />
-                <Route path="/terms-conditions" element={<RouteWrapper element={<Policy />}/>} />
-                <Route path="*" element={<RouteWrapper element={<NoPage />} />} />
-              </Routes>
-              {!cookies.cookieConsent && <Cookies setCookie={setCookie} />}
-            </div>
-          </BrowserRouter>
-        </ThemeMode.Provider>
-      }
-      <ScrollToTopButton/>
+      <ThemeMode.Provider value={{ themeMode, setThemeMode }}>
+        <BrowserRouter>
+          <div className="app">
+            <Routes>
+              <Route index element={<RouteWrapper element={<Home />} />} />
+              <Route path="/home" element={<RouteWrapper element={<Home />} />} />
+              <Route path="/about" element={<RouteWrapper element={<About />} />} />
+              <Route path="/experience" element={<RouteWrapper element={<Experience />} />} />
+              <Route path="/contact" element={<RouteWrapper element={<Contact />} />} />
+              <Route path="/terms-conditions" element={<RouteWrapper element={<Policy />} />} />
+              <Route path="*" element={<RouteWrapper element={<NoPage />} />} />
+            </Routes>
+            {!cookies.cookieConsent && <Cookies setCookie={setCookie} />}
+          </div>
+        </BrowserRouter>
+      </ThemeMode.Provider>
+
+      <ScrollToTopButton />
     </>
   );
 }
