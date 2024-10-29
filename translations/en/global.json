@@ -9,7 +9,7 @@
     },
     "footer": {
         "info1": "Designed in Figma and coded in Visual Studio Code.",
-        "info2": "Built with React and CSS.",
+        "info2": "Built with React.js and CSS.",
         "terms":"Terms and Conditions"
     },
     "home": {
@@ -18,7 +18,7 @@
     },
     "about": {
         "about": "About",
-        "paragraph": "I'm Diogo Matos. I'm 21-year-old portuguese and recently graduated with a degree in Computer Science Engineering from Évora, Portugal. Through my coursework and internships, I have developed significant programming skills. I am highly proactive and always eager to learn and work. Currently, I am focused on refining my web and mobile development abilities, particularly with the React framework, and I am actively seeking job opportunities in these areas.",
+        "paragraph": "I'm Diogo Matos. I'm 21-year-old portuguese and recently graduated with a degree in Computer Science Engineering from Évora, Portugal. Through my coursework and internships, I have developed significant programming skills. I am highly proactive and always eager to learn and work. Currently, I am focused on refining my web and mobile development abilities, particularly with the React.js framework, and I am actively seeking job opportunities in these areas.",
         "projects": "Projects",
         "click": "Click here to see more ↗",
         "skills": "Digital Skills"
@@ -75,7 +75,7 @@
             "percentage":"85%"
         },
         {
-            "name":"React.JS",
+            "name":"React.js",
             "percentage":"70%"
         },
         {
