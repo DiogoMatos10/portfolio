@@ -8,7 +8,7 @@ function HomeContent(){
 
     return (
         <div className="home-container">
-            <p className="hello">{t("home.hello")}</p>
+            <p className="titles">{t("home.hello")}</p>
             <p className="paragraph">{t("home.paragraph")}</p>
             <div className="links-icon">
                 <abbr title="GitHub">

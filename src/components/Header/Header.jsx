@@ -84,7 +84,7 @@ function Header() {
         <div className={`header ${menuOpen ? 'menu-open' : ''}`}>
             <div className="logo-container">
                 <abbr title={t("header.abbrHome")}>
-                    <a href="/" onClick={(e) => { e.preventDefault(); navigate('/'); }}><img className="logo-picture" src="src/assets/dm@2.png" alt="Diogo's Logo" /></a>
+                    <a href="/" onClick={(e) => { e.preventDefault(); navigate('/'); }}><img className="logo-picture" src="/images/dm@2.png" alt="Diogo's Logo" /></a>
                 </abbr>
             </div>
             <div className={`hamburger ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>

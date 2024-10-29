@@ -1,17 +1,4 @@
-@font-face {
-    font-family: 'Roboto Regular';
-    src: url('./fonts/Roboto/Roboto-Regular.ttf') format('truetype');
-    font-style: normal;
-    font-weight: 300;
-}
-
-@font-face {
-    font-family: "Roboto Light";
-    src: url('./fonts/Roboto/Roboto-Light.ttf') format('truetype');
-    font-style: normal;
-    font-weight: 300;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
 
 :root {
@@ -76,8 +63,16 @@ body {
     margin: 0;
     padding: 0;
     color: var(--text-color);
-    font-family: 'Roboto Light', sans-serif;
+    font-family: 'Roboto', sans-serif;
     min-width: 350px;
+}
+
+.titles, .nav-options{
+    font-weight: 400 !important; 
+}
+
+p:not(.titles, .nav-options) {
+    font-weight: 300 !important;
 }
 
 .app {
