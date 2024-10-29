@@ -53,7 +53,7 @@ a:link, a:visited{
     backdrop-filter: var(--glass-backdrop-filter);
     -webkit-backdrop-filter: var(--glass-webkit-backdrop-filter);
     border: var(--glass-border);
-    border-radius: 5px;
+    border-radius: 0.5rem;
     padding: 15px;
     overflow: hidden;
     position: relative;
@@ -72,11 +72,12 @@ a:link, a:visited{
 }
 
 .project-container .project-title{
-    font-size: 16px;    
+    font-size: 18px;    
 }
 
 .project-container .project-description{
-    font-size: 13px;
+    font-size: 16px;
+    color: var(--bar-color);
 }
 
 .project-tecnologies{
@@ -100,7 +101,7 @@ a:link, a:visited{
     color: var(--percentage-color);
     font-size: 12px;
     background:  var( --percentage-background);
-    border-radius: 5px;
+    border-radius: 0.2rem;
     width: auto;
     padding: 4px;
     align-items: center;
@@ -147,7 +148,7 @@ a:link, a:visited{
     -webkit-backdrop-filter: var(--glass-webkit-backdrop-filter);
     border: var(--glass-border);
     padding: 30px;
-    border-radius: 5px;
+    border-radius: 0.5rem;
 }
 
 .skill-column {
@@ -197,7 +198,7 @@ a:link, a:visited{
     align-items: center;
     justify-content: center;
     font-size: 12px; 
-    border-radius: 5px;
+    border-radius: 0.2rem;
     z-index: 10; 
     transform: translateY(-50%);
     white-space: nowrap;

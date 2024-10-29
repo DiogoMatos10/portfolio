@@ -1,14 +1,14 @@
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import AboutContent from "../components/Content/AboutContent";
+import AboutContent from "../components/AboutContent/AboutContent";
 import React from "react";
 
 function About(){
-    return(<div id="root">
+    return(<>
         <Header />
         <AboutContent/>
         <Footer />
-      </div>);
+      </>);
 }
 
 export default About

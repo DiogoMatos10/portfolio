@@ -30,7 +30,7 @@ function Cookies({ setCookie }) {
         <div className="cookie-consent">
             <p>
                 {t("cookies.description")}{" "}
-                <Link to="/terms-conditions" target="_blank">{t("cookies.learn")}</Link>
+                <Link to="/terms-conditions">{t("cookies.learn")}</Link>
             </p>
             <div className="cookies-button-container">
                 <button 

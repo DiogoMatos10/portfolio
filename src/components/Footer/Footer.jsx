@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 function Footer() {
-    const { themeMode, setThemeMode } = useContext(ThemeMode);
     const [t, i18n] = useTranslation("global");
     let date = new Date();
 
@@ -20,7 +19,7 @@ function Footer() {
                     <p>{t("footer.info2")}</p>
                 </div>
                 <div className="footer-right">
-                    <Link to="/terms-conditions" target="_blank">{t("footer.terms")}</Link>
+                    <Link to="/terms-conditions">{t("footer.terms")}</Link>
                 </div>
             </div>
         </div>

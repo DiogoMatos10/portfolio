@@ -1,3 +1,4 @@
+// App.jsx
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import React, { useState, createContext, useEffect } from "react";
 import { useCookies } from "react-cookie";
@@ -7,35 +8,36 @@ import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
 import LoadingScreen from './pages/LoadingScreen';
-import Policy from "./pages/Policy"
+import Policy from "./pages/Policy";
 import Cookies from "./components/Cookies/Cookies";
-import ScrollToTopButton from "./components/ScrollToTopButton";
+import ScrollToTopButton from "./components/ScrollToTop/ScrollToTopButton";
 import ReactGA from "react-ga";
 
-const TRACKING_ID="dddd";
+const TRACKING_ID = "dddd";
 export const ThemeMode = createContext();
 
 function App() {
-  const [themeMode, setThemeMode] = useState(false); // false is dark mode, true is light
+  const [themeMode, setThemeMode] = useState(() => {
+    // Recupera do localStorage; se não houver, define como false (dark mode)
+    return JSON.parse(localStorage.getItem("themeMode")) || false;
+  });
+
   const [loading, setLoading] = useState(true);
   const [cookies, setCookie] = useCookies(["cookieConsent"]);
 
-  // Inicialização do GA apenas com consentimento
   useEffect(() => {
     if (cookies.cookieConsent) {
       ReactGA.initialize(TRACKING_ID);
-      ReactGA.pageview(window.location.pathname); 
+      ReactGA.pageview(window.location.pathname);
     }
-  }, [cookies.cookieConsent]); 
+  }, [cookies.cookieConsent]);
 
   useEffect(() => {
-    if (themeMode) {
-      document.body.classList.add('light-mode');
-      document.body.classList.remove('dark-mode');
-    } else {
-      document.body.classList.add('dark-mode');
-      document.body.classList.remove('light-mode');
-    }
+    document.body.classList.toggle('light-mode', themeMode);
+    document.body.classList.toggle('dark-mode', !themeMode);
+
+    // Salva o modo no localStorage
+    localStorage.setItem("themeMode", JSON.stringify(themeMode));
   }, [themeMode]);
 
   useEffect(() => {
@@ -53,20 +55,15 @@ function App() {
     useEffect(() => {
       const rootElement = document.getElementById('root');
       const path = location.pathname;
-      const validPaths = ['/', '/home', '/about', '/experience', '/contact','/terms-conditions'];
+      const validPaths = ['/', '/terms-conditions'];
 
       if (!validPaths.includes(path)) {
         rootElement.classList.add('no-page');
         document.body.classList.remove('light-mode', 'dark-mode');
       } else {
         rootElement.classList.remove('no-page');
-        if (themeMode) {
-          document.body.classList.add('light-mode');
-          document.body.classList.remove('dark-mode');
-        } else {
-          document.body.classList.add('dark-mode');
-          document.body.classList.remove('light-mode');
-        }
+        document.body.classList.toggle('light-mode', themeMode);
+        document.body.classList.toggle('dark-mode', !themeMode);
       }
     }, [location, themeMode]);
 
@@ -78,18 +75,18 @@ function App() {
       {loading ? <LoadingScreen /> :
         <ThemeMode.Provider value={{ themeMode, setThemeMode }}>
           <BrowserRouter>
-              <div className="app">
-                <Routes>
-                  <Route index element={<RouteWrapper element={<Home />} />} />
-                  <Route path="/home" element={<RouteWrapper element={<Home />} />} />
-                  <Route path="/about" element={<RouteWrapper element={<About />} />} />
-                  <Route path="/experience" element={<RouteWrapper element={<Experience />} />} />
-                  <Route path="/contact" element={<RouteWrapper element={<Contact />} />} />
-                  <Route path="/terms-conditions" element={<RouteWrapper element={<Policy />}/>} />
-                  <Route path="*" element={<RouteWrapper element={<NoPage />} />} />
-                </Routes>
-                {!cookies.cookieConsent && <Cookies setCookie={setCookie} />}
-              </div>
+            <div className="app">
+              <Routes>
+                <Route index element={<RouteWrapper element={<Home />} />} />
+                <Route path="/home" element={<RouteWrapper element={<Home />} />} />
+                <Route path="/about" element={<RouteWrapper element={<About />} />} />
+                <Route path="/experience" element={<RouteWrapper element={<Experience />} />} />
+                <Route path="/contact" element={<RouteWrapper element={<Contact />} />} />
+                <Route path="/terms-conditions" element={<RouteWrapper element={<Policy />}/>} />
+                <Route path="*" element={<RouteWrapper element={<NoPage />} />} />
+              </Routes>
+              {!cookies.cookieConsent && <Cookies setCookie={setCookie} />}
+            </div>
           </BrowserRouter>
         </ThemeMode.Provider>
       }

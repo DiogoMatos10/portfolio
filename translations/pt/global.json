@@ -128,18 +128,11 @@
         }
     },
     "contact": {
-        "title": "Sinta-se à vontade para entrar em contacto comigo através de qualquer um dos seguintes meios.",
-        "fname": "Nome",
-        "femail": "Email",
-        "fsubject": "Assunto",
-        "fmessage": "A sua mensagem",
-        "fsubmit": "Enviar",
-        "terms_part1": "Concordo com os",
-        "terms_link": "Termos e Condições",
-        "terms_part3": "e reconheço a",
-        "privacy_policy_link": "Política de Privacidade",
-        "required": "Obrigatório",
-        "invalid": "Inválido"     
+        "title": "Sinta-se à vontade para entrar em contacto comigo através de qualquer um dos seguintes meios",
+        "gitHubDescription": "Explore projetos e contribua com código",
+        "linkedInDescription": "Conecte-se profissionalmente e expanda a sua rede",
+        "email": "Envie um e-mail",
+        "emailDescription": "Entre em contacto para perguntas ou colaborações"
     },
     "cookies": {
         "description": "Este site utiliza cookies para melhorar a sua experiência de utilizador. Ao usar o meu site, concorda com a utilização de cookies.",

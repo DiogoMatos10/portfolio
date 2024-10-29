@@ -69,9 +69,9 @@ function AboutContent() {
       <div className="projects">
         <p className="titles">{t("about.projects")}</p>
         <div className='project-content'>
-          {projects.map(project => (
+          {projects.map((project,index) => (
             project.link ? (
-              <abbr title={t("projectsAbbr.abbrProject")}>
+              <abbr key={`abbr-${index}`} title={t("projectsAbbr.abbrProject")}>
                 <Link to={project.link} key={project.name} target="_blank">
                   <div className='project-container'>
                     <p className='project-title'>{project.name}</p>
@@ -105,8 +105,8 @@ function AboutContent() {
         <p className="titles">{t("about.skills")}</p>
         <div className="skills-content">
           <div className="skill-column">
-            {firstHalfSkills.map(skill => (
-              <div key={skill.name} className="skill-container">
+            {firstHalfSkills.map((skill,index) => (
+              <div key={`${skill.name}-${index}`} className="skill-container">
                 <p>{skill.name}</p>
                 <div className={`percentage ${skill.name.toLowerCase()}-percentage`}>
                   {skill.percentage}
@@ -118,8 +118,8 @@ function AboutContent() {
             ))}
           </div>
           <div className="skill-column">
-            {secondHalfSkills.map(skill => (
-              <div key={skill.name} className="skill-container">
+            {secondHalfSkills.map((skill,index) => (
+              <div key={`${skill.name}-${index}`} className="skill-container">
                 <p>{skill.name}</p>
                 <div className={`percentage ${skill.name.toLowerCase()}-percentage`}>
                   {skill.percentage}

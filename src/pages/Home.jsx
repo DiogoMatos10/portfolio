@@ -1,10 +1,10 @@
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import React from "react";
-import HomeContent from "../components/Content/HomeContent";
-import AboutContent from "../components/Content/AboutContent";
-import ExperienceContent from "../components/Content/ExperienceContent";
-import ContactContent from "../components/Content/ContactContent";
+import HomeContent from "../components/HomeContent/HomeContent";
+import AboutContent from "../components/AboutContent/AboutContent";
+import ExperienceContent from "../components/ExperienceContent/ExperienceContent";
+import ContactContent from "../components/ContactContent/ContactContent";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -24,12 +24,10 @@ function Home() {
   }, [location]);
 
   return (
-    <div id="root">
+    <>
       <Header />
       <section id="home" className="home">
-        <div className="home-container">
           <HomeContent/>
-        </div>
       </section>
       <section id="about" className="about">
         <AboutContent/>  
@@ -41,7 +39,7 @@ function Home() {
         <ContactContent/>  
       </section>
       <Footer />
-    </div>
+    </>
   );
 }
 

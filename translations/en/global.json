@@ -128,18 +128,11 @@
         }
     },
     "contact":{
-        "title":"Feel free to reach out to me through any of the following channels.",
-        "fname":"Name",
-        "femail":"Email",
-        "fsubject":"Subject",
-        "fmessage":"Your message",
-        "fsubmit":"Send",
-        "terms_part1": "I agree to the",
-        "terms_link": "Terms and Conditions",
-        "terms_part3": "and acknowledge the",
-        "privacy_policy_link": "Privacy Policy",
-        "required": "Required",
-        "invalid": "Invalid"     
+        "title":"Feel free to reach out to me through any of the following channels",
+        "gitHubDescription":"Explore projects and contribute to code",
+        "linkedInDescription":"Connect professionally and network",
+        "email":"Send a Email",
+        "emailDescription":"Reach out for inquiries or collaboration"
     },
     "cookies":{
         "description":"This site use cookies to enhance your user experience. By using my website, you agree to my use of cookies.",

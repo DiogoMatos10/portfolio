@@ -1,13 +1,13 @@
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import ExperienceContent from "../components/Content/ExperienceContent";
+import ExperienceContent from "../components/ExperienceContent/ExperienceContent";
 
 function Experience(){
-    return(<div id="root">
+    return(<>
         <Header />
         <ExperienceContent/>
         <Footer />
-      </div>);
+      </>);
 }
 
 export default Experience

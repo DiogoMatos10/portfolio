@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-scroll"; // Mantenha a importação do react-scroll para rolagem suave
 import { useNavigate } from "react-router-dom"; // Adicione esta importação
 import "./Header.css";
 import { ThemeMode } from "../../App";
@@ -10,11 +9,14 @@ function Header() {
     const [closing, setClosing] = useState(false);
     const { themeMode, setThemeMode } = useContext(ThemeMode);
     const [t, i18n] = useTranslation('global');
-    const [language, setLanguage] = useState(i18n.language);
-    const navigate = useNavigate(); // Crie uma instância do hook useNavigate
+    const [language, setLanguage] = useState(() => localStorage.getItem("language") || i18n.language);
+    const navigate = useNavigate(); 
 
     const handleChangeLanguage = (lang) => {
-        i18n.changeLanguage(lang).then(() => setLanguage(lang));
+        i18n.changeLanguage(lang).then(() => {
+            setLanguage(lang);
+            localStorage.setItem("language", lang); 
+        });
     };
 
     const toggleMenu = () => {

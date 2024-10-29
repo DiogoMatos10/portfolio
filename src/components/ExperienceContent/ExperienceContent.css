@@ -116,7 +116,7 @@
 .timeline-container .timeline-content {
     padding: 30px;
     position: relative;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     background: var(--glass-background-color);
     box-shadow: var(--glass-box-shadow);
     backdrop-filter: blur(4.0px);
@@ -151,9 +151,7 @@
     transform: translateY(-6px);    
 }
 
-.timeline-container.right .timeline-content {
-    border-radius: 5px;
-}
+
 
 .timeline-container .timeline-content .timeline-title {
     margin: 0 0 10px 0;

@@ -90,17 +90,18 @@ body {
     font-family: 'Roboto Light', sans-serif;
 }
 
-@media (min-width:1300px) {
-    #root{
-        width: 1300px;
-        margin: auto;
-    }
-}
-
-#root {
+.app {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    max-width: 1300px; /* Use max-width para evitar overflow */
+    margin: 0 auto; /* Centraliza o root */
+}
+
+@media (min-width: 1300px) {
+    .app {
+        width: 100%; /* 100% para evitar problemas de scroll */
+    }
 }
 
 
@@ -113,4 +114,9 @@ img, svg{
 
 abbr[title]{
     text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--text-color);
 }

@@ -1,0 +1,79 @@
+.contact-container {
+    padding: 80px 25px; /* Padding em cima e embaixo, 25px nas laterais */
+    margin: 20px 40px 80px; /* Margem: 20px em cima, 40px nas laterais, 80px embaixo */
+}
+
+.contact-container .titles {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 70px; /* Margem inferior para espaçamento */
+}
+
+.contact-container .links-icon {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grid responsivo */
+    gap: 20px; /* Espaçamento entre os itens */
+    justify-content: center; /* Centraliza os itens */
+    align-items: stretch; /* Estica os itens */
+}
+
+.link-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 100%; /* Largura máxima */
+    padding: 20px; /* Padding interno */
+    border-radius: 0.5rem; /* Bordas arredondadas */
+    background: var(--glass-background-color); /* Fundo de vidro */
+    box-shadow: var(--glass-box-shadow); /* Sombra */
+    backdrop-filter: var(--glass-backdrop-filter); /* Filtro de desfoque */
+    -webkit-backdrop-filter: var(--glass-webkit-backdrop-filter); /* Filtro de desfoque para WebKit */
+    border: var(--glass-border); /* Borda */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+    cursor: pointer; /* Cursor de ponteiro */
+    text-decoration: none; /* Remove sublinhado */
+    height: 100%; /* Altura total */
+}
+
+.link-box:hover {
+    background: var(--secondary-color); /* Cor de fundo ao passar o mouse */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
+    transform: translateY(-5px); /* Levanta o box */
+    border-color: var(--hover-color); /* Cor da borda ao passar o mouse */
+}
+
+.link-box svg {
+    width: 32px; /* Tamanho do ícone */
+    height: 32px; /* Tamanho do ícone */
+    margin-bottom: 10px; /* Margem inferior */
+}
+
+.link-title {
+    font-size: 18px; /* Tamanho da fonte do título */
+    margin: 10px 0; /* Margem em cima e embaixo */
+    font-weight: bold; /* Negrito */
+    color: var(--text-color); /* Cor do texto */
+}
+
+.link-description {
+    font-size: 16px; /* Tamanho da fonte da descrição */
+    color: var(--bar-color); /* Cor do texto */
+}
+
+.link-box .link-description {
+    flex-grow: 1; /* Crescimento flexível */
+    display: flex; /* Flexível para centralização */
+    align-items: center; /* Alinha ao centro */
+    justify-content: center; /* Centraliza o conteúdo */
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 925px) {
+    .contact-container .links-icon {
+        grid-template-columns: 1fr; /* Um único item por linha em telas pequenas */
+        gap: 20px; /* Espaçamento entre os itens */
+    }
+}
