@@ -26,13 +26,14 @@
     line-height: 2;
 }
 
-.github-icon, .linkdin-icon, .email-icon {
+.github-icon, .linkdin-icon, .email-icon, .instagram-icon {
     stroke: var(--text-color);
 }
 
 .home-container .github-icon:hover,
 .home-container .linkdin-icon:hover,
-.home-container .email-icon:hover {
+.home-container .email-icon:hover,
+.home-container .instagram-icon:hover {
     stroke: var(--hover-color);
 }
 

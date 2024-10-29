@@ -69,7 +69,7 @@
     justify-content: center;
 }
 
-@media (max-width: 935px) {
+@media (max-width: 1205px) {
     .contact-container .links-icon {
         grid-template-columns: 1fr; 
         gap: 20px; 
