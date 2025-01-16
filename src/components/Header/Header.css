@@ -7,6 +7,7 @@
     justify-content: space-between;
     font-family: 'Roboto', sans-serif;
     position: relative;
+    min-width: 300px;
 }
 
 /* Logo */
@@ -112,7 +113,7 @@
 
 @media (max-width:650px) {
     .header {
-        position: relative;
+        position: ;
     }
 
     .header ul {
@@ -143,7 +144,7 @@
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease-out;
-        border-bottom: 2px var(--secondary-color) solid;
+        border-bottom: none;
     }
 
     .header li a:not(.button-container li a){
@@ -200,6 +201,7 @@
 
     .header .menu-btn:checked~.menu {
         max-height: 260px;
+        border-bottom: 2px var(--secondary-color) solid; 
     }
 
     .header .menu-btn:checked~.menu-icon .navicon {
