@@ -164,6 +164,10 @@
         position: relative;
         user-select: none;
         display: flex;
+        padding: 0; 
+        margin: 0; 
+        width: auto; 
+        height: auto; 
     }
 
     .header .menu-icon .navicon {
@@ -184,7 +188,6 @@
         position: absolute;
         transition: all .2s ease-out;
         width: 100%;
-        margin-left: 20px;
     }
 
     .header .menu-icon .navicon:before {
