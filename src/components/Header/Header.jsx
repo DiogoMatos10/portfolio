@@ -5,7 +5,6 @@ import { ThemeMode } from "../../App";
 import { useTranslation } from "react-i18next";
 
 function Header() {
-    const [menuOpen, setMenuOpen] = useState(false);
     const { themeMode, setThemeMode } = useContext(ThemeMode);
     const [t, i18n] = useTranslation('global');
     const [language, setLanguage] = useState(() => localStorage.getItem("language") || i18n.language);
