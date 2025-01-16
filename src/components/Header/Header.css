@@ -160,10 +160,10 @@
     .header .menu-icon {
         cursor: pointer;
         display: inline-block;
-        float: right;
         padding: 28px 20px;
         position: relative;
         user-select: none;
+        display: flex;
     }
 
     .header .menu-icon .navicon {
@@ -184,6 +184,7 @@
         position: absolute;
         transition: all .2s ease-out;
         width: 100%;
+        margin-left: 20px;
     }
 
     .header .menu-icon .navicon:before {
