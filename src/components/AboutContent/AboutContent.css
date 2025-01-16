@@ -239,7 +239,12 @@ a:link, a:visited{
     }
 
     .projects{
-        margin:10px 0px
+        margin:10px 0px;
+        gap: 20px;
+    }
+
+    .project-content {
+        padding-top: 20px; 
     }
 
     .about-container {
