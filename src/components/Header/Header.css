@@ -113,7 +113,7 @@
 
 @media (max-width:650px) {
     .header {
-        position: ;
+        position: relative;
     }
 
     .header ul {
