@@ -5,6 +5,7 @@
 
 .experience-container .titles{
     margin-left: 40px;
+    padding-bottom: 20px;
 }
 
 .timeline {
@@ -149,8 +150,6 @@
 .timeline-container:hover .timeline-date {
     transform: translateY(-6px);    
 }
-
-
 
 .timeline-container .timeline-content .timeline-title {
     margin: 0 0 10px 0;

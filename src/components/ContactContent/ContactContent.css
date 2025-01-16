@@ -73,5 +73,7 @@
     .contact-container .links-icon {
         grid-template-columns: 1fr; 
         gap: 20px; 
+        padding-top: 20px;
     }
+
 }
