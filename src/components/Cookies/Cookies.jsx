@@ -6,7 +6,7 @@ import ReactGA from "react-ga";
 
 const TRACKING_ID="dddd";
 
-function Cookies({ setCookie }) {
+function Cookies({ setCookie, onConsent }) {
     const [t, i18n] = useTranslation('global');
     const [isVisible, setIsVisible] = useState(true); 
 
@@ -21,6 +21,8 @@ function Cookies({ setCookie }) {
             ReactGA.initialize(TRACKING_ID); 
             ReactGA.pageview(window.location.pathname);
         }
+
+        onConsent(ctrl);
     };
 
     if (!isVisible) return null; 
