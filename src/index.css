@@ -139,7 +139,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 
-button, a, label{
+button, a, label, .progress-wrap{
     touch-action: manipulation; 
     outline: none; 
     -webkit-tap-highlight-color: transparent;
