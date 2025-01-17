@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: var(--glass-background-color); 
+    background-color: var(--glass-background-flash); 
     color: var(--hover-color);
     box-shadow: var(--glass-box-shadow); 
     backdrop-filter: var(--glass-backdrop-filter);
@@ -47,3 +47,6 @@
     stroke-width: 4; 
     transition: stroke-dashoffset 0.5s ease; 
 }
+
+
+
