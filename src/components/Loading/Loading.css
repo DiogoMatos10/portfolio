@@ -1,9 +1,10 @@
 #loader-container {
   max-width: 220px;
-  position: absolute;
+  position: fixed; /* Garantir que a posição seja fixa na tela */
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* Centralização perfeita tanto vertical quanto horizontal */
+  z-index: 10000; /* Para garantir que o loader apareça acima de outros elementos */
 }
 
 #loader path {
