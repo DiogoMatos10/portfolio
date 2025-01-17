@@ -124,6 +124,7 @@
         flex-direction: column;
     }
 
+    
     .header li a {
         display: block;
         padding: 20px 20px;
@@ -153,6 +154,7 @@
 
     .header .menu li {
         text-align: center; 
+        margin-left: 0px;
     }
 
     /* menu icon */
@@ -228,8 +230,14 @@
     }
     
     .button-container{
+        display: flex;
+        flex-direction: row; /* Garante alinhamento horizontal */
+        justify-content: center; /* Centraliza o container */
+        align-items: center; /* Alinha verticalmente com o restante do menu */
+        gap: 20px; /* Define o espaçamento entre os li */
+        margin-left: -10px; /* Remove deslocamento lateral */
+        gap: 20px; /* Mantém o espaçamento entre itens */
         margin-top: 20px;
-        margin-left: -10px;
-        margin-bottom: 40px;
+        margin-bottom: 40px; /* Para consistência visual */
     }
 }
