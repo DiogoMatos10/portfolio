@@ -16,7 +16,7 @@
 
 .timeline-container:hover::before {
     background: var(--secondary-color);
-    box-shadow: 8px 12px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 8px 12px 8px 0 rgba(0, 0, 0, 0.1);
     transform: translateY(-5px);
 }
 
@@ -127,21 +127,21 @@
 
 .timeline-container .timeline-content:hover {
     background: var(--secondary-color);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     transform: translateY(-5px);
     border-color: var(--hover-color);
 }
 
 .timeline-container:hover::after {
     background: var(--secondary-color);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     transform: translateY(-5px);
     border-color: var(--hover-color);
 }
 
 .timeline-container:hover .timeline-content {
     background: var(--secondary-color);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     transform: translateY(-5px);
     border-color: var(--hover-color);
 }
