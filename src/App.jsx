@@ -110,7 +110,7 @@ function App() {
               <Route path="/terms-conditions" element={<RouteWrapper element={<Policy />} />} />
               <Route path="*" element={<RouteWrapper element={<NoPage />} />} />
             </Routes>
-            {!isNoPage &&  <Footer />}
+            {!isNoPage && <Footer />}
             {!isNoPage && !cookies.cookieConsent && <Cookies setCookie={setCookie} onConsent={handleCookieConsent} />}
           </div>
         </BrowserRouter>
