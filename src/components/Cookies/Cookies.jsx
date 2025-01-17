@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";  
 import "./Cookies.css";
 import { Link } from "react-router-dom";
 import ReactGA from "react-ga";
@@ -9,6 +10,7 @@ const TRACKING_ID="dddd";
 function Cookies({ setCookie, onConsent }) {
     const [t, i18n] = useTranslation('global');
     const [isVisible, setIsVisible] = useState(true); 
+    const navigate = useNavigate();  
 
     const giveCookieConsent = (ctrl) => {
         const oneMonthFromNow = new Date();
@@ -25,13 +27,18 @@ function Cookies({ setCookie, onConsent }) {
         onConsent(ctrl);
     };
 
+    const navigateToPolicy = () => {
+        navigate("/terms-conditions");
+        window.scrollTo(0, 0); 
+    };
+
     if (!isVisible) return null; 
 
     return (
         <div className="cookie-consent">
             <p>
                 {t("cookies.description")}{" "}
-                <Link to="/terms-conditions">{t("cookies.learn")}</Link>
+                <Link to="/terms-conditions" onClick={navigateToPolicy}>{t("cookies.learn")}</Link>
             </p>
             <div className="cookies-button-container">
                 <button 
