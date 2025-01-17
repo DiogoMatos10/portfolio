@@ -1,22 +1,29 @@
 name: Continuous Integration
 
-on: pull_request
+on:
+  pull_request:
+    branches:
+      - main
 
-jobs: 
+jobs:
   build:
-    runs-on: windows-latest
+    runs-on: windows-latest  # The build will run on the latest version of Windows
 
     steps:
+      # Step 1: Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Step 2: Setup Node.js environment
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with: 
-          node-version: 18.x
+          node-version: 18.x  # Specify the Node.js version
 
+      # Step 3: Install project dependencies
       - name: Install dependencies
         run: npm install
 
+      # Step 4: Build the project
       - name: Build the project
-        run: npm run build
+        run: npm run build  # Runs the build script to create a production build

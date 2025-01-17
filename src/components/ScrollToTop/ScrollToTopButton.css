@@ -5,15 +5,15 @@
     height: 50px;
     width: 50px; 
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 50%; 
     background-color: var(--glass-background-flash); 
-    color: var(--hover-color);
+    color: var(--hover-color); 
     box-shadow: var(--glass-box-shadow); 
-    backdrop-filter: var(--glass-backdrop-filter);
-    border: var(--glass-border);
+    backdrop-filter: var(--glass-backdrop-filter); 
+    border: var(--glass-border); 
     opacity: 0; 
     visibility: hidden; 
     transform: translateY(15px); 
@@ -22,7 +22,7 @@
 }
 
 .progress-wrap.move-down {
-    bottom: 50px; 
+    bottom: 50px;
 }
 
 .progress-wrap.active-progress {
@@ -33,28 +33,26 @@
 
 .progress-circle {
     position: absolute; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
 }
 
 .icon {
     position: relative; 
     font-size: 20px; 
-    z-index: 1;
+    z-index: 1; 
 }
 
 .progress-circle path {
-    fill: none;
+    fill: none; 
     stroke: var(--hover-color);
     stroke-width: 4; 
     transition: stroke-dashoffset 0.5s ease; 
 }
 
-
-
-@media (max-width:650px) {
+@media (max-width: 650px) {
     .progress-wrap.move-down {
         right: 20px; 
     }

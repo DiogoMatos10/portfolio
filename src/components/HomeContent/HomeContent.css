@@ -4,7 +4,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start; 
-    max-width: 100vw; 
     margin: 20px 0 100px; 
     box-sizing: border-box;
     color: var(--text-color);
@@ -12,7 +11,7 @@
 }
 
 .home-container p,
-.home-container div{
+.home-container div {
     margin-left: 40px;
 }
 
@@ -24,7 +23,7 @@
     margin-bottom: 70px;
     font-size: 18px;
     line-height: 2;
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 .github-icon, .linkdin-icon, .email-icon, .instagram-icon {
@@ -38,24 +37,24 @@
     stroke: var(--hover-color);
 }
 
+.home-container svg {
+    margin-right: 20px; 
+}
+
 @media (max-width: 650px) {
     .home-container p {
         width: 100%; 
     }
 }
 
-.home-container svg {
-    margin-right: 20px; 
-}
-
 @media (max-width: 1000px) {
-    .home-container{
+    .home-container {
         padding: 50px;
         margin: 20px 0 50px;
     }
 
     .home-container p,
-    .home-container div{
-        margin-left: 0px;
+    .home-container div {
+        margin-left: 0;
     }
 }

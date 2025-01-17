@@ -1,46 +1,45 @@
-.policy-container{
+.policy-container {
     padding: 80px 25px;
     margin-top: 20px;
     margin-bottom: 100px;
     min-width: 350px;
 }
 
-.policy-container .titles{
+.policy-container .titles {
     margin-left: 40px;
 }
 
-.policy-container .subtitles{
+.policy-container .subtitles {
     font-size: 25px;
     margin-top: 60px;
     margin-bottom: 25px;
 }
 
-.policy-container .paragraph{
+.policy-container .paragraph {
     margin-left: 40px;
     margin-right: 40px;
     margin-bottom: 10px;
 }
 
-.policy-container .suba{
+.policy-container .suba {
     font-size: 20px;
     margin-top: 40px;
 }
 
-.policy-container ul{
+.policy-container ul {
     margin-left: 40px;
     margin-right: 40px;
     font-size: 18px;
     font-weight: 300 !important;
 }
 
-.policy-container li{
+.policy-container li {
     line-height: 2;
     margin-bottom: 10px;
 }
 
-
 @media (max-width: 650px) {
-    .policy-container{
+    .policy-container {
         padding: 50px;
     }
 
@@ -49,11 +48,11 @@
     .policy-container .paragraph,
     .policy-container .suba {
         width: 100%;
-        margin-left:auto;
+        margin-left: auto;
         margin-right: auto;
     }
 
-    .policy-container ul{
-        margin-left: 0px;
+    .policy-container ul {
+        margin-left: 0;
     }
 }
