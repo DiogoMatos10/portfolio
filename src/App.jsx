@@ -43,6 +43,8 @@ function App() {
     if (cookies.cookieConsent) {
       ReactGA.initialize(TRACKING_ID);
       ReactGA.pageview(window.location.pathname);
+
+      setMoveScrollButton(true); 
     }
   }, [cookies.cookieConsent]);
 
