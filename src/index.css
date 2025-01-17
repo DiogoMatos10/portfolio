@@ -33,7 +33,7 @@
     --hover-color: #7A7A7A;
 
     --glass-background-color: rgba(235, 235, 235, 0.25);
-    --glass-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.080); 
+    --glass-box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.020); 
     --glass-backdrop-filter: blur(2.3px);
     --glass-webkit-backdrop-filter: blur(2.3px);
     --glass-border-color: rgba(132, 132, 132, 0.30); 
