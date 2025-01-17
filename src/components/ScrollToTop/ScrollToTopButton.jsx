@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './ScrollToTopButton.css'; 
 
-export const ScrollToTopButton = () => {
+export const ScrollToTopButton = ({moveScrollButton}) => {
     const [isVisible, setIsVisible] = useState(false);
     const [progress, setProgress] = useState(0);
     const pathRef = useRef(null); 
@@ -53,7 +53,10 @@ export const ScrollToTopButton = () => {
 
     return (
         <div>
-            <div className={`progress-wrap ${isVisible ? 'active-progress' : ''}`} onClick={scrollToTop}>
+            <div 
+                className={`progress-wrap ${isVisible ? 'active-progress' : ''} ${moveScrollButton ? 'move-down':''} `} 
+                onClick={scrollToTop}
+            >
                 <svg className="progress-circle" width="100%" height="100%" viewBox="-1 -1 102 102">
                     <path
                         ref={pathRef}

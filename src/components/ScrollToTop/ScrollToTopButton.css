@@ -21,6 +21,10 @@
     z-index: 1000; 
 }
 
+.progress-wrap.move-down {
+    bottom: 50px; 
+}
+
 .progress-wrap.active-progress {
     opacity: 1; 
     visibility: visible; 
@@ -50,3 +54,8 @@
 
 
 
+@media (max-width:650px) {
+    .progress-wrap.move-down {
+        right: 20px; 
+    }
+}

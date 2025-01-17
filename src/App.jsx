@@ -37,6 +37,7 @@ function App() {
   });
 
   const [cookies, setCookie] = useCookies(["cookieConsent"]);
+  const [moveScrollButton, setMoveScrollButton] = useState(false); 
 
   useEffect(() => {
     if (cookies.cookieConsent) {
@@ -61,6 +62,9 @@ function App() {
     }
   }, [loading]);
 
+  const handleCookieConsent = (ctrl) => {
+    setMoveScrollButton(true);  
+  };
   
 
   function RouteWrapper({ element }) {
@@ -107,12 +111,12 @@ function App() {
               <Route path="*" element={<RouteWrapper element={<NoPage />} />} />
             </Routes>
             {!isNoPage &&  <Footer />}
-            {!isNoPage && !cookies.cookieConsent && <Cookies setCookie={setCookie} />}
+            {!isNoPage && !cookies.cookieConsent && <Cookies setCookie={setCookie} onConsent={handleCookieConsent} />}
           </div>
         </BrowserRouter>
       </ThemeMode.Provider>
 
-      <ScrollToTopButton />
+      <ScrollToTopButton moveScrollButton={moveScrollButton} />
     </>
   );
 }
