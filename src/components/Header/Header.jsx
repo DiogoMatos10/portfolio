@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom"; 
 import "./Header.css";
 import { ThemeMode } from "../../App";
@@ -8,7 +8,9 @@ function Header() {
     const { themeMode, setThemeMode } = useContext(ThemeMode);
     const [t, i18n] = useTranslation('global');
     const [language, setLanguage] = useState(() => localStorage.getItem("language") || i18n.language);
+    const [menuOpen, setMenuOpen] = useState(false); 
     const navigate = useNavigate(); 
+    const menuRef = useRef(null); 
 
     const handleChangeLanguage = (lang) => {
         i18n.changeLanguage(lang).then(() => {
@@ -22,9 +24,27 @@ function Header() {
     };
 
     const handleNavigation = (targetClass) => {
-        navigate(`/#${targetClass}`);        
-        setMenuOpen(false);
+        navigate(`/#${targetClass}`);
+        setMenuOpen(false); 
     };
+
+    const handleOutsideClick = (e) => {
+        if (menuRef.current && !menuRef.current.contains(e.target)) {
+            setMenuOpen(false); 
+        }
+    };
+
+    useEffect(() => {
+        if (menuOpen) {
+            document.addEventListener("mousedown", handleOutsideClick);
+        } else {
+            document.removeEventListener("mousedown", handleOutsideClick);
+        }
+
+        return () => {
+            document.removeEventListener("mousedown", handleOutsideClick);
+        };
+    }, [menuOpen]);
 
     return (
         <header className="header">
@@ -33,13 +53,18 @@ function Header() {
                     <a href="/" onClick={(e) => { e.preventDefault(); navigate('/'); }}><img className="logo-picture" src="/images/dm@2.png" alt="Diogo's Logo" /></a>
                 </abbr>
             </div>
-
-            <input className="menu-btn" type="checkbox" id="menu-btn" />
+            <input
+                className="menu-btn"
+                type="checkbox"
+                id="menu-btn"
+                checked={menuOpen}
+                onChange={() => setMenuOpen(prev => !prev)} 
+            />
             <label className="menu-icon" htmlFor="menu-btn">
                 <span className="navicon"></span>
             </label>
 
-            <ul className="menu">
+            <ul className="menu" ref={menuRef}>
                 <li><a href="#" onClick={() => handleNavigation('about')}>{t("header.about")}</a></li>
                 <li><a href="#" onClick={() => handleNavigation('experience')}>{t("header.experience")}</a></li>
                 <li><a href="#" onClick={() => handleNavigation('contact')}>{t("header.contact")}</a></li>
