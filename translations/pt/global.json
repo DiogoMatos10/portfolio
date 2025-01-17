@@ -13,8 +13,8 @@
         "terms": "Termos e Condições"
     },
     "home": {
-        "hello": "Olá, eu sou o Diogo",
-        "paragraph": "O meu nome é Diogo Matos, sou licenciado em Engenharia Informática. Aqui poderá saber mais sobre mim, como a minha trajetória académica e profissional. Explore os meus projetos para ver no que trabalhei, descobrir as minhas competências digitais e descobrir a minha experiência. Sinta-se à vontade para entrar em contacto se tiver alguma dúvida ou se quiser conectar-se."
+        "hello": "Bem-vindo ao meu Website",
+        "paragraph": "O meu nome é Diogo Matos, sou licenciado em Engenharia Informática. Aqui poderá saber mais sobre mim, como a minha trajetória académica e profissional. Explore os meus projetos para ver no que trabalhei, descubra as minhas competências digitais e a minha experiência. Sinta-se à vontade para entrar em contacto se tiver alguma dúvida ou se quiser conectar."
     },
     "about": {
         "about": "Sobre",
@@ -53,13 +53,19 @@
             "link": "https://github.com/DiogoMatos10/Uni/tree/main/SDist"
         },
         {
-            "name": "Projeto em OutSystems",
-            "description": "Este projeto foi concluído durante um estágio extracurricular na KPMG Portugal. Desenvolvi uma Reactive App para gerir projetos, seus managers e recursos.",
+            "name": "Projeto de Gestão de Dados de Valores Mobiliários",
+            "description": "Este projeto consiste numa API GraphQL no backend, construída com Node.js, TypeScript e PostgreSQL. O frontend foi Construído com React.js, utilizando Material UI (MUI) para o design e Highcharts para visualização de dados. A aplicação obtém e exibe dados de valores mobiliários, incluindo preços, volume e tendências.",
             "technologies": [
-                "OutSystems"
+                "Node.js", 
+                "TypeScript", 
+                "GraphQL", 
+                "PostgreSQL",
+                "React.js", 
+                "Material UI (MUI)", 
+                "Highcharts"
             ],
-            "link": null
-        }
+            "link": "https://github.com/DiogoMatos10/JS_FullStack_Exercise"
+        }             
     ],
     "dataSkills":[
         {
@@ -83,7 +89,7 @@
             "percentage":"80%"
         },
         {
-            "name":"OutSystems",
+            "name":"TypeScript",
             "percentage":"75%"
         },
         {
@@ -91,7 +97,7 @@
             "percentage":"60%"
         },
         {
-            "name":"C",
+            "name":"C#",
             "percentage":"65%"
         }
     ],
@@ -114,26 +120,26 @@
         "timeline3": {
             "title": "Estágio Extracurricular, KPMG Portugal",
             "date": "2023",
-            "description": "Realizei um estágio com duração de 1 ano onde realizei um projeto em OutSystems, mais precisamente uma Reactive App."
+            "description": "Realizei um estágio de um mês onde trabalhei num projeto em OutSystems, especificamente numa Reactive App. Durante o estágio, fui responsável pelo desenvolvimento e implementação da aplicação, que tinha como objetivo gerir projetos, os seus managers e recursos."
         },
         "timeline4": {
             "title": "Estágio Curricular, KMPG Portugal",
             "date": "2024",
-            "description": "Passado uns meses voltei a realizar mais um estágio na empresa mas desta vez com duração de 5 meses, onde tive o objetivo de analisar e testar soluções no mercado para o papel de Analytics para Reactive Apps em OutSystems, onde pela primeira vez tive contacto com o mundo de Web Analytics."
+            "description": "Passado uns meses voltei a realizar mais um estágio na empresa mas desta vez com duração de 3 meses, onde tive o objetivo de analisar e testar soluções no mercado para o papel de Analytics para Reactive Apps em OutSystems, onde pela primeira vez tive contacto com o mundo de Web Analytics."
         },
         "timeline5": {
             "title": "Conclusão da Licenciatura em Engenharia Informática",
-            "date": "2021",
-            "description": "Passado dois anos conclui a licenciatura."
+            "date": "2024",
+            "description": "Dois anos depois de ter iniciado o curso, concluí-o."
         }
     },
     "contact": {
         "title": "Sinta-se à vontade para entrar em contacto comigo através de qualquer um dos seguintes meios",
-        "gitHubDescription": "Explore projetos e contribua com código",
-        "linkedInDescription": "Conecte-se profissionalmente e expanda a sua rede",
+        "gitHubDescription": "Explore os meus projetos e contribua com código",
+        "linkedInDescription": "Conecte-se profissionalmente comigo e expanda a sua rede",
         "email": "Envie um e-mail",
         "emailDescription": "Entre em contacto para perguntas ou colaborações",
-        "instagramDescription": "Segue-me para atualizações, ideias e momentos da minha jornada"
+        "instagramDescription": "Siga-me para atualizações, ideias e momentos da minha jornada"
     },
     "cookies": {
         "description": "Este site utiliza cookies para melhorar a sua experiência de utilizador. Ao usar o meu site, concorda com a utilização de cookies.",
