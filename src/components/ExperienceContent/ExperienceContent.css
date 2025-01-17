@@ -1,11 +1,10 @@
 .experience-container{
-    padding: 80px 25px;
-    margin-top: 20px;
+    padding: 0px 25px;
+    margin-top: 80px;
 }
 
 .experience-container .titles{
     margin-left: 40px;
-    padding-bottom: 20px;
 }
 
 .timeline {
@@ -171,11 +170,12 @@
     }
 
     .experience-container{
-        padding: 50px;
+        padding: 0px 50px;
     }
     
     .experience-container .titles{
         margin-left: 0px;
+        margin-top: 0px;
     }
 
     .timeline{

@@ -42,12 +42,12 @@
     --glass-border-color: rgba(132, 132, 132, 0.30);
     --glass-border: 1px solid rgba(132, 132, 132, 0.30);
 
-    --glass-background-cookie: rgba(235, 235, 235, 0.25);
+    --glass-background-cookie: rgba(235, 235, 235, 0.50);
     --cookie-learn-color: hsl(0, 0%, 25%);
     --cookie-button-reject-color:var(--primary-color);
     --cookie-button-reject-hover: hsl(0, 0%, 50%);
 
-    --glass-background-flash :hsla(0, 0%, 90%, 0.50);
+    --glass-background-flash :hsla(0, 0%, 90%, 0.20);
 
     --bar-color: #A3A3A3;
     --percentage-color:var(--text-color);

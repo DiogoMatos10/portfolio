@@ -7,12 +7,11 @@
     color: var(--text-color);
     margin-top: 20px;
     box-sizing: border-box;
-    margin-bottom: 100px;
 }
 
 .titles {
     font-size: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .about-info,
@@ -26,9 +25,6 @@
     width: calc(50% - 80px);
 }
 
-.about-info .paragraph{
-    margin-top: 50px;
-}
 
 .project-content{
     text-decoration: none;
@@ -132,6 +128,11 @@ a:link, a:visited{
     color: var(--text-color);
 }
 
+.skills{
+    margin-top: 80px;
+    gap: 0px;
+}
+
 .skills-content {
     display: flex;
     flex-direction: row;
@@ -207,6 +208,10 @@ a:link, a:visited{
     animation: animatePercentage 1.5 forwards;
 }
 
+.skills .titles{
+    margin-top: 0px;
+}
+
 @keyframes animateWidth {
     from {
         width: 0%;
@@ -234,22 +239,24 @@ a:link, a:visited{
         height: auto;
     }
 
-    .about-info{
-        margin-bottom: -50px;
+    .about-info .paragraph{
+        margin-bottom: 0px;
     }
 
-    .projects{
-        margin:10px 0px;
-        gap: 20px;
+    .about-info,.projects,.skills{
+        margin-bottom: 0px;
+    }
+ 
+    .projects, .skills{
+        margin-top: 80px;
     }
 
-    .project-content {
-        padding-top: 20px; 
+    .about .titles{
+        margin-top: 0px;
     }
 
     .about-container {
-        padding: 50px;
-        margin-bottom: 50px;
+        padding: 0px 50px;
     }
 
     .skills {
