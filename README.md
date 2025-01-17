@@ -1,5 +1,7 @@
 # Personal Website - Portfolio
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ecadc6ff-30f3-4f06-af50-1a7cef4f7e50/deploy-status)](https://app.netlify.com/sites/diogomatos/deploys)
+
 ## Overview
 
 This project is my personal website, which serves as an online portfolio to showcase my work, skills, and experiences. It was designed in **Figma** and developed using **React** for the front-end and **CSS** for styling. The website includes sections such as **About**, **Experience**, and **Contact**, and is fully responsive, making it accessible on both desktop and mobile devices.
