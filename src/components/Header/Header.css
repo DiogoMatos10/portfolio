@@ -11,6 +11,7 @@
 }
 
 /* Logo */
+
 .header .logo {
     display: flex;
     text-align: center;
@@ -23,7 +24,6 @@
 .header .logo img {
     height: 40px;
 }
-
 
 /* Menu */
 
