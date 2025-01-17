@@ -93,7 +93,7 @@ p:not(.titles, .nav-options, .project-title,.timeline-title,.link-title) {
 }
 
 
-img, svg{
+img, svg, .progress-circle{
     user-select: none;
     -webkit-user-select: none; 
     -moz-user-select: none; 
