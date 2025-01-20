@@ -15,6 +15,10 @@
     overflow: hidden;
 }
 
+body.no-scroll {
+    overflow: hidden; 
+}
+
 .container-404 {
     margin: auto;
 }
