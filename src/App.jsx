@@ -77,16 +77,19 @@ function App() {
       const rootElement = document.getElementById('root');
       const path = location.pathname;
       const validPaths = ['/', '/terms-conditions'];
-
+  
       if (!validPaths.includes(path)) {
-        rootElement.classList.add('no-page');
-        document.body.classList.remove('light-mode', 'dark-mode');
+          rootElement.classList.add('no-page');
+          document.body.classList.add('no-scroll'); 
+          document.body.classList.remove('light-mode', 'dark-mode');
       } else {
-        rootElement.classList.remove('no-page');
-        document.body.classList.toggle('light-mode', themeMode);
-        document.body.classList.toggle('dark-mode', !themeMode);
+          rootElement.classList.remove('no-page');
+          document.body.classList.remove('no-scroll'); 
+          document.body.classList.toggle('light-mode', themeMode);
+          document.body.classList.toggle('dark-mode', !themeMode);
       }
-    }, [location, themeMode]);
+  }, [location, themeMode]);
+  
 
     return element;
   }
