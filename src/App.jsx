@@ -34,7 +34,8 @@ function App() {
     } else {
       return true; 
     }
-  });
+  }); 
+
 
   const [cookies, setCookie] = useCookies(["cookieConsent"]);
   const [moveScrollButton, setMoveScrollButton] = useState(false); 
@@ -55,14 +56,14 @@ function App() {
     localStorage.setItem("themeMode", JSON.stringify(themeMode));
   }, [themeMode]);
 
-  useEffect(() => {
+ useEffect(() => {
     if (loading) {
       setTimeout(() => {
         setLoading(false);
         localStorage.setItem("hasVisited", JSON.stringify({ timestamp: Date.now() }));
       }, 3300); 
     }
-  }, [loading]);
+  }, [loading]); 
 
   const handleCookieConsent = (ctrl) => {
     setMoveScrollButton(true);  
