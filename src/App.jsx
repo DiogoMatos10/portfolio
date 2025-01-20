@@ -30,22 +30,22 @@ function App() {
     const now = Date.now();
 
     if (storedData && now - storedData.timestamp < EXPIRATION_TIME) {
-      return false; 
+      return false;
     } else {
-      return true; 
+      return true;
     }
-  }); 
+  });
 
 
   const [cookies, setCookie] = useCookies(["cookieConsent"]);
-  const [moveScrollButton, setMoveScrollButton] = useState(false); 
+  const [moveScrollButton, setMoveScrollButton] = useState(false);
 
   useEffect(() => {
     if (cookies.cookieConsent) {
       ReactGA.initialize(TRACKING_ID);
       ReactGA.pageview(window.location.pathname);
 
-      setMoveScrollButton(true); 
+      setMoveScrollButton(true);
     }
   }, [cookies.cookieConsent]);
 
@@ -56,19 +56,19 @@ function App() {
     localStorage.setItem("themeMode", JSON.stringify(themeMode));
   }, [themeMode]);
 
- useEffect(() => {
+  useEffect(() => {
     if (loading) {
       setTimeout(() => {
         setLoading(false);
         localStorage.setItem("hasVisited", JSON.stringify({ timestamp: Date.now() }));
-      }, 3300); 
+      }, 3300);
     }
-  }, [loading]); 
+  }, [loading]);
 
   const handleCookieConsent = (ctrl) => {
-    setMoveScrollButton(true);  
+    setMoveScrollButton(true);
   };
-  
+
 
   function RouteWrapper({ element }) {
     const location = useLocation();
@@ -97,7 +97,7 @@ function App() {
   if (loading && !isNoPage) {
     return <Loading />;
   }
-  
+
   return (
     <>
       <ThemeMode.Provider value={{ themeMode, setThemeMode }}>
@@ -119,7 +119,7 @@ function App() {
         </BrowserRouter>
       </ThemeMode.Provider>
 
-      <ScrollToTopButton moveScrollButton={moveScrollButton} />
+      {!isNoPage && <ScrollToTopButton moveScrollButton={moveScrollButton} />}
     </>
   );
 }
