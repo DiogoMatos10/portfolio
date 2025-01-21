@@ -22,9 +22,17 @@ function Header() {
 
     const handleNavigation = (targetClass) => {
         navigate(`/#${targetClass}`);
+        setTimeout(() => {
+            const targetElement = document.getElementById(targetClass);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: "smooth" });
+            }
+        }, 0);
+    
         const checkbox = document.getElementById("menu-btn");
         if (checkbox) checkbox.checked = false;
     };
+    
 
     const handleOutsideClick = (e) => {
         const checkbox = document.getElementById("menu-btn");
