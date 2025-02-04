@@ -9,8 +9,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vite test",
-    "predeploy": "npm run build",
-    "build-jsx": "babel src --out-dir dist --extensions \".jsx\""
+    "predeploy": "npm run build"
   },
   "homepage": "https://DiogoMatos10.github.io/portfolio",
   "dependencies": {
