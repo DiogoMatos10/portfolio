@@ -14,5 +14,28 @@ export default defineConfig({
   ],
   build: {
     outDir: 'dist',
+    rollupOptions: {
+      output: {
+        entryFileNames: '[name]-[hash].js',
+        assetFileNames: '[name]-[hash][extname]',
+      },
+      plugins: [
+        {
+          name: 'jsx-mime-type-fix',
+          transform(code, id) {
+            if (id.endsWith('.jsx')) {
+              return {
+                code,
+                map: null, 
+                meta: {
+                  mimeType: 'application/javascript',
+                },
+              };
+            }
+          },
+        },
+      ],
+    },
   },
+  base: '/',
 });
