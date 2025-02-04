@@ -7,10 +7,8 @@ export default defineConfig({
     react(),
     viteStaticCopy({
       targets: [
-        {
-          src: '_redirects', 
-          dest: '.', 
-        },
+        { src: '_redirects', dest: '.' },
+        { src: 'public/images/favicon/site.webmanifest', dest: 'images/favicon' }
       ],
     }),
   ],
