@@ -18,7 +18,7 @@
     },
     "about": {
         "about": "Sobre",
-        "paragraph": "O meu nome é Diogo Matos. Tenho 22 anos, sou português e licenciei-me recentemente em Engenharia Informática em Évora, Portugal. Através do meu curso e estágios, desenvolvi competências de programação significativas. Sou altamente proativo e estou sempre disposto a aprender e a trabalhar. Atualmente, estou focado em refinar as minhas competências de desenvolvimento web e mobile, particularmente com a framework React.js, e procuro ativamente oportunidades de emprego nestas áreas.",
+        "paragraph": "O meu nome é Diogo Matos. Tenho 22 anos, sou português e licenciei-me recentemente em Engenharia Informática em Évora, Portugal. Através do meu curso, estágios e experiência profissional como Full-Stack Developer, desenvolvi competências de programação significativas. Sou altamente proativo e estou sempre disposto a aprender e a trabalhar. Atualmente, estou focado em refinar as minhas competências de desenvolvimento web, particularmente com React.js.",
         "projects": "Projetos",
         "click": "Clique aqui para ver mais ↗",
         "skills": "Competências Digitais"
@@ -131,6 +131,11 @@
             "title": "Conclusão da Licenciatura em Engenharia Informática",
             "date": "2024",
             "description": "Dois anos depois de ter iniciado o curso, concluí-o."
+        },
+        "timeline6": {
+            "title": "Full-Stack Developer, BSO Consulting",
+            "date": "2025",
+            "description": "Iniciei trabalho como Full-Stack Developer, com foco em React.js, Bootstrap, Vue.js e .NET com ASP.NET para o desenvolvimento de aplicações web."
         }
     },
     "contact": {

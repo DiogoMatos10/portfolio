@@ -51,6 +51,13 @@ function ExperienceContent() {
                         <p className="timeline-description">{t("experience.timeline5.description")}</p>
                     </div>
                 </div>
+                <div className="timeline-container right">
+                    <div className="timeline-date">{t("experience.timeline6.date")}</div>
+                    <div className="timeline-content">
+                        <p className="timeline-title">{t("experience.timeline6.title")}</p>
+                        <p className="timeline-description">{t("experience.timeline6.description")}</p>
+                    </div>
+                </div>
             </div>
         </div>
     );

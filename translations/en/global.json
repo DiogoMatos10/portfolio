@@ -18,7 +18,7 @@
     },
     "about": {
         "about": "About",
-        "paragraph": "I'm Diogo Matos. I'm 22-year-old portuguese and recently graduated with a degree in Computer Science Engineering from Évora, Portugal. Through my coursework and internships, I have developed significant programming skills. I am highly proactive and always eager to learn and work. Currently, I am focused on refining my web and mobile development abilities, particularly with the React.js framework, and I am actively seeking job opportunities in these areas.",
+        "paragraph": "I'm Diogo Matos. I'm a 22-year-old Portuguese and recently graduated with a degree in Computer Science Engineering from Évora, Portugal. Through my coursework, internships, and work experience as a Full-Stack Developer, I have developed significant programming skills. I am highly proactive and always eager to learn and work. Currently, I am focused on refining my web development abilities, particularly with React.js.",
         "projects": "Projects",
         "click": "Click here to see more ↗",
         "skills": "Digital Skills"
@@ -127,6 +127,11 @@
             "title": "Completion of Bachelor's Degree in Computer Science Engineering",
             "date":"2024",
             "description": "Two years after starting the course, I completed it."
+        },
+        "timeline6": {
+        "title": "Full-Stack Developer, BSO Consulting",
+        "date": "2025",
+        "description": "Started working as a Full-Stack Developer, focusing on React.js, Bootstrap, Vue.js, and .NET with ASP.NET to develop web applications."
         }
     },
     "contact":{
