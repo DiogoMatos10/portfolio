@@ -7,7 +7,7 @@ import About from "./pages/About";
 import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
-import Loading from './components/Loading/Loading';
+import Loading from "./components/Loading/Loading";
 import Policy from "./pages/Policy";
 import Cookies from "./components/Cookies/Cookies";
 import ScrollToTopButton from "./components/ScrollToTop/ScrollToTopButton";
@@ -36,7 +36,6 @@ function App() {
     }
   });
 
-
   const [cookies, setCookie] = useCookies(["cookieConsent"]);
   const [moveScrollButton, setMoveScrollButton] = useState(false);
 
@@ -50,8 +49,8 @@ function App() {
   }, [cookies.cookieConsent]);
 
   useEffect(() => {
-    document.body.classList.toggle('light-mode', themeMode);
-    document.body.classList.toggle('dark-mode', !themeMode);
+    document.body.classList.toggle("light-mode", themeMode);
+    document.body.classList.toggle("dark-mode", !themeMode);
 
     localStorage.setItem("themeMode", JSON.stringify(themeMode));
   }, [themeMode]);
@@ -60,7 +59,10 @@ function App() {
     if (loading) {
       setTimeout(() => {
         setLoading(false);
-        localStorage.setItem("hasVisited", JSON.stringify({ timestamp: Date.now() }));
+        localStorage.setItem(
+          "hasVisited",
+          JSON.stringify({ timestamp: Date.now() })
+        );
       }, 3300);
     }
   }, [loading]);
@@ -69,33 +71,31 @@ function App() {
     setMoveScrollButton(true);
   };
 
-
   function RouteWrapper({ element }) {
     const location = useLocation();
 
     useEffect(() => {
-      const rootElement = document.getElementById('root');
+      const rootElement = document.getElementById("root");
       const path = location.pathname;
-      const validPaths = ['/', '/terms-conditions'];
-  
+      const validPaths = ["/", "/terms-conditions"];
+
       if (!validPaths.includes(path)) {
-          rootElement.classList.add('no-page');
-          document.body.classList.add('no-scroll'); 
-          document.body.classList.remove('light-mode', 'dark-mode');
+        rootElement.classList.add("no-page");
+        document.body.classList.add("no-scroll");
+        document.body.classList.remove("light-mode", "dark-mode");
       } else {
-          rootElement.classList.remove('no-page');
-          document.body.classList.remove('no-scroll'); 
-          document.body.classList.toggle('light-mode', themeMode);
-          document.body.classList.toggle('dark-mode', !themeMode);
+        rootElement.classList.remove("no-page");
+        document.body.classList.remove("no-scroll");
+        document.body.classList.toggle("light-mode", themeMode);
+        document.body.classList.toggle("dark-mode", !themeMode);
       }
-  }, [location, themeMode]);
-  
+    }, [location, themeMode]);
 
     return element;
   }
 
-  const isNoPage = (location.pathname !== '/' && location.pathname !== '/terms-conditions');
-
+  const isNoPage =
+    location.pathname !== "/" && location.pathname !== "/terms-conditions";
 
   if (loading && !isNoPage) {
     return <Loading />;
@@ -109,15 +109,32 @@ function App() {
             {!isNoPage && <Header />}
             <Routes>
               <Route index element={<RouteWrapper element={<Home />} />} />
-              <Route path="/home" element={<RouteWrapper element={<Home />} />} />
-              <Route path="/about" element={<RouteWrapper element={<About />} />} />
-              <Route path="/experience" element={<RouteWrapper element={<Experience />} />} />
-              <Route path="/contact" element={<RouteWrapper element={<Contact />} />} />
-              <Route path="/terms-conditions" element={<RouteWrapper element={<Policy />} />} />
+              <Route
+                path="/home"
+                element={<RouteWrapper element={<Home />} />}
+              />
+              <Route
+                path="/about"
+                element={<RouteWrapper element={<About />} />}
+              />
+              <Route
+                path="/experience"
+                element={<RouteWrapper element={<Experience />} />}
+              />
+              <Route
+                path="/contact"
+                element={<RouteWrapper element={<Contact />} />}
+              />
+              <Route
+                path="/terms-conditions"
+                element={<RouteWrapper element={<Policy />} />}
+              />
               <Route path="*" element={<RouteWrapper element={<NoPage />} />} />
             </Routes>
             {!isNoPage && <Footer />}
-            {!isNoPage && !cookies.cookieConsent && <Cookies setCookie={setCookie} onConsent={handleCookieConsent} />}
+            {!isNoPage && !cookies.cookieConsent && (
+              <Cookies setCookie={setCookie} onConsent={handleCookieConsent} />
+            )}
           </div>
         </BrowserRouter>
       </ThemeMode.Provider>
