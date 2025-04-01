@@ -179,6 +179,8 @@
         max-width: 130%; 
         height: auto;
         max-height: 600px; 
+        min-height: 300px;
+        min-width: 600px;
         object-fit: contain; 
     }
     
