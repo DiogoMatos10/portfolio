@@ -10,6 +10,7 @@ import avatarLight from "../../../public/images/Fundo Claro/avatar@1xlight.png";
 function HomeContent() {
   const [t, i18n] = useTranslation("global");
   const [isLightMode, setIsLightMode] = useState(false);
+  const [animationKey, setAnimationKey] = useState(0);
   const textToType = t("home.hello");
 
   useEffect(() => {
@@ -27,10 +28,15 @@ function HomeContent() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    setAnimationKey((prevKey) => prevKey + 1);
+  }, [i18n.language]);
+
   return (
     <div className="home-container">
       <div className="contentLeft">
         <TypeAnimation
+          key={animationKey}
           sequence={[t("home.hello")]}
           wrapper="h1"
           speed={50}
@@ -157,7 +163,6 @@ function HomeContent() {
           className="avatar"
           src={isLightMode ? avatarLight : avatarDark}
           alt="avatar"
-          
         />
       </div>
     </div>
